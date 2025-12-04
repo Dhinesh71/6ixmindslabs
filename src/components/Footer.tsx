@@ -67,11 +67,6 @@ export function Footer() {
                   IoT Solutions
                 </a>
               </li>
-              <li>
-                <a href="#process" className="hover:text-white transition-colors">
-                  Consulting
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -86,11 +81,6 @@ export function Footer() {
               <li>
                 <a href="#portfolio" className="hover:text-white transition-colors">
                   Portfolio
-                </a>
-              </li>
-              <li>
-                <a href="#process" className="hover:text-white transition-colors">
-                  Our Process
                 </a>
               </li>
               <li>

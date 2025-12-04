@@ -108,7 +108,7 @@ export function Services() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-primary mb-6">
             End-to-end technical execution
           </h2>
-          <p className="text-lg md:text-xl text-muted max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-muted text-gray-700 max-w-3xl mx-auto">
             We handle the full stack — from frontend UX to cloud infrastructure, AI models to
             physical hardware.
           </p>
