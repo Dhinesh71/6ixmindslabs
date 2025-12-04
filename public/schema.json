@@ -1,0 +1,71 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://6ixminds.com/#organization",
+      "name": "6ixminds Labs",
+      "url": "https://6ixminds.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://6ixminds.com/logo.png"
+      },
+      "description": "Engineering-first shop for Full-Stack, AI, and IoT solutions. We build production-ready web, AI & IoT products for startups.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toronto",
+        "addressCountry": "CA"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@6ixminds.com",
+        "contactType": "Sales",
+        "availableLanguage": ["English"]
+      },
+      "sameAs": [
+        "https://linkedin.com/company/6ixminds",
+        "https://github.com/6ixminds",
+        "https://twitter.com/6ixminds"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://6ixminds.com/#fullstack",
+      "serviceType": "Full-Stack Web Development",
+      "provider": {
+        "@id": "https://6ixminds.com/#organization"
+      },
+      "description": "Modern, scalable web applications using React, Next.js, TypeScript, Node.js, Python, and cloud deployment.",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://6ixminds.com/#ai",
+      "serviceType": "AI & Machine Learning Solutions",
+      "provider": {
+        "@id": "https://6ixminds.com/#organization"
+      },
+      "description": "Intelligent automation and insights with LLM integration, computer vision, NLP pipelines, and fine-tuning.",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://6ixminds.com/#iot",
+      "serviceType": "IoT Solutions",
+      "provider": {
+        "@id": "https://6ixminds.com/#organization"
+      },
+      "description": "Connected devices and edge computing with hardware prototyping, real-time data, and edge ML inference.",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+      }
+    }
+  ]
+}
