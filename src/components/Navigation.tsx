@@ -41,7 +41,7 @@ export function Navigation() {
                 className="w-10 h-10 object-contain rounded-lg"
               />
             </div>
-            <span className="text-xl font-bold text-text-primary hidden sm:inline">
+            <span className="text-xl font-bold text-text-primary hidden sm:inline nav-glow">
               6ixminds Labs
             </span>
           </button>
@@ -49,25 +49,25 @@ export function Navigation() {
           <div className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection("services")}
-              className="text-text-primary hover:text-accent-1 transition-colors font-medium"
+              className="text-text-primary hover:text-accent-1 transition-colors font-medium nav-glow"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("portfolio")}
-              className="text-text-primary hover:text-accent-1 transition-colors font-medium"
+              className="text-text-primary hover:text-accent-1 transition-colors font-medium nav-glow"
             >
               Work
             </button>
             <button
               onClick={() => scrollToSection("process")}
-              className="text-text-primary hover:text-accent-1 transition-colors font-medium"
+              className="text-text-primary hover:text-accent-1 transition-colors font-medium nav-glow"
             >
               Process
             </button>
             <button
               onClick={() => scrollToSection("team")}
-              className="text-text-primary hover:text-accent-1 transition-colors font-medium"
+              className="text-text-primary hover:text-accent-1 transition-colors font-medium nav-glow"
             >
               About
             </button>
@@ -94,25 +94,25 @@ export function Navigation() {
           <div className="px-4 py-4 space-y-3">
             <button
               onClick={() => scrollToSection("services")}
-              className="block w-full text-left text-text-primary hover:text-accent-1 transition-colors font-medium py-2"
+              className="block w-full text-left text-text-primary nav-glow hover:text-accent-1 transition-colors font-medium py-2"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("portfolio")}
-              className="block w-full text-left text-text-primary hover:text-accent-1 transition-colors font-medium py-2"
+              className="block w-full text-left text-text-primary nav-glow hover:text-accent-1 transition-colors font-medium py-2"
             >
               Work
             </button>
             <button
               onClick={() => scrollToSection("process")}
-              className="block w-full text-left text-text-primary hover:text-accent-1 transition-colors font-medium py-2"
+              className="block w-full text-left text-text-primary nav-glow hover:text-accent-1 transition-colors font-medium py-2"
             >
               Process
             </button>
             <button
               onClick={() => scrollToSection("team")}
-              className="block w-full text-left text-text-primary hover:text-accent-1 transition-colors font-medium py-2"
+              className="block w-full text-left text-text-primary nav-glow hover:text-accent-1 transition-colors font-medium py-2"
             >
               About
             </button>

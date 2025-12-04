@@ -66,3 +66,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .nav-glow {
+    text-shadow: 0 0 6px rgba(99,102,241,0.18), 0 0 10px rgba(99,102,241,0.08);
+    transition: text-shadow .2s ease, color .15s ease;
+  }
+  .nav-glow:hover {
+    text-shadow: 0 0 10px rgba(99,102,241,0.35), 0 0 24px rgba(99,102,241,0.18);
+  }
+  /* stronger glow variant if needed */
+  .nav-glow-strong {
+    text-shadow: 0 0 12px rgba(99,102,241,0.55), 0 0 28px rgba(99,102,241,0.25);
+  }
+}
