@@ -17,7 +17,7 @@ function PhoneMockup({ position, delay, shouldReduceMotion }: PhoneMockupProps) 
       className={`absolute ${
         isLeft ? 'left-[15%] top-[20%] z-10' : 'right-[10%] top-[35%] z-20'
       }`}
-      initial={{ opacity: 0, y: 40, scale: 0.8 }}
+      initial={{ opacity: 0, y: 20, scale: 0.95 }}
       animate={{
         opacity: 1,
         y: 0,
@@ -25,7 +25,7 @@ function PhoneMockup({ position, delay, shouldReduceMotion }: PhoneMockupProps) 
         ...(shouldReduceMotion
           ? {}
           : {
-              y: isLeft ? [0, -15, 0] : [0, 15, 0],
+              y: [0, -3, 0],
             }),
       }}
       transition={{
@@ -36,7 +36,7 @@ function PhoneMockup({ position, delay, shouldReduceMotion }: PhoneMockupProps) 
           ? {}
           : {
               y: {
-                duration: 4,
+                duration: 7,
                 ease: 'easeInOut',
                 repeat: Infinity,
                 repeatType: 'reverse',
@@ -46,11 +46,6 @@ function PhoneMockup({ position, delay, shouldReduceMotion }: PhoneMockupProps) 
       }}
       style={{
         transformStyle: 'preserve-3d',
-        transform: shouldReduceMotion
-          ? 'none'
-          : isLeft
-          ? 'perspective(1200px) rotateY(-15deg) rotateZ(-8deg)'
-          : 'perspective(1200px) rotateY(12deg) rotateZ(5deg)',
       }}
     >
       <div className="relative w-[180px] h-[360px] md:w-[220px] md:h-[440px]">
@@ -157,7 +152,7 @@ export function HeroFinal() {
   };
 
   const fadeUpVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 12 },
     visible: (delay: number) => ({
       opacity: 1,
       y: 0,
@@ -241,17 +236,17 @@ export function HeroFinal() {
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
               <motion.div
                 className="absolute w-72 h-72 bg-purple-300/20 rounded-full blur-3xl"
-                animate={shouldReduceMotion ? {} : { scale: [1, 1.15, 1] }}
-                transition={{ duration: 8, ease: 'easeInOut', repeat: Infinity }}
+                animate={shouldReduceMotion ? {} : { scale: [1, 1.05, 1] }}
+                transition={{ duration: 7, ease: 'easeInOut', repeat: Infinity }}
               />
               <motion.div
                 className="absolute w-64 h-64 bg-pink-300/15 rounded-full blur-3xl"
-                animate={shouldReduceMotion ? {} : { scale: [1, 1.1, 1] }}
+                animate={shouldReduceMotion ? {} : { scale: [1, 1.05, 1] }}
                 transition={{
-                  duration: 9,
+                  duration: 7,
                   ease: 'easeInOut',
                   repeat: Infinity,
-                  delay: 1,
+                  delay: 3.5,
                 }}
               />
             </div>
