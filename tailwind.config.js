@@ -54,6 +54,15 @@ export default {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
+  		fontSize: {
+  			'heading-1': 'clamp(2.5rem, 5vw + 1rem, 4.5rem)',
+  			'heading-2': 'clamp(2rem, 4vw + 0.5rem, 3.5rem)',
+  			'heading-3': 'clamp(1.75rem, 3vw + 0.5rem, 2.5rem)',
+  			'heading-4': 'clamp(1.5rem, 2.5vw + 0.5rem, 2rem)',
+  			'body-lg': 'clamp(1.125rem, 1.5vw + 0.5rem, 1.5rem)',
+  			'body-md': 'clamp(1rem, 1vw + 0.5rem, 1.25rem)',
+  			'body-sm': 'clamp(0.875rem, 0.75vw + 0.5rem, 1rem)',
+  		},
   		fontFamily: {
   			sans: [
   				'Inter',
@@ -65,6 +74,12 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		minHeight: {
+  			'tap': '44px',
+  		},
+  		spacing: {
+  			'container': 'clamp(1rem, 3vw, 2rem)',
   		}
   	}
   },

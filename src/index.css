@@ -62,8 +62,37 @@
   * {
     @apply border-border;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  button, a {
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -75,8 +104,30 @@
   .nav-glow:hover {
     text-shadow: 0 0 10px rgba(99,102,241,0.35), 0 0 24px rgba(99,102,241,0.18);
   }
-  /* stronger glow variant if needed */
   .nav-glow-strong {
     text-shadow: 0 0 12px rgba(99,102,241,0.55), 0 0 28px rgba(99,102,241,0.25);
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .content-grid {
+      gap: 1.5rem;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
   }
 }
