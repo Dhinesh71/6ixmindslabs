@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { Send, CheckCircle, Mail, MessageSquare, User } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { CTAButton } from './motion/CTAButton';
 
 export function Contact() {
+  const shouldReduceMotion = useReducedMotion();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -37,7 +40,12 @@ export function Contact() {
     <section id="contact" className="bg-white py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <div>
+          <motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
             <div className="inline-flex items-center space-x-2 bg-accent-3/20 px-4 py-2 rounded-full mb-6">
               <span className="text-sm font-semibold text-accent-1 uppercase tracking-wide">
                 Let's Talk
@@ -91,9 +99,15 @@ export function Contact() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="bg-ui-muted-bg rounded-2xl p-8 shadow-xl">
+          <motion.div
+            className="bg-ui-muted-bg rounded-2xl p-8 shadow-xl"
+            initial={shouldReduceMotion ? false : { opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          >
             {isSubmitted ? (
               <div className="flex flex-col items-center justify-center py-12 text-center">
                 <CheckCircle size={64} className="text-green-500 mb-4" />
@@ -165,10 +179,11 @@ export function Contact() {
                   ></textarea>
                 </div>
 
-                <button
+                <CTAButton
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-accent-1 text-white px-8 py-4 rounded-lg font-semibold hover:bg-accent-2 transition-all hover:shadow-xl hover:shadow-accent-3/50 flex items-center justify-center space-x-2 uppercase tracking-wide text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                  variant="primary"
+                  className="w-full flex items-center justify-center space-x-2 uppercase tracking-wide text-sm"
                 >
                   {isSubmitting ? (
                     <span>Sending...</span>
@@ -178,14 +193,14 @@ export function Contact() {
                       <Send size={18} />
                     </>
                   )}
-                </button>
+                </CTAButton>
 
                 <p className="text-xs text-muted text-center">
                   By submitting, you agree to our privacy policy. We never share your data.
                 </p>
               </form>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

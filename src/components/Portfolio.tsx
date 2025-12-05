@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ExternalLink, X } from 'lucide-react';
+import { motion, useReducedMotion, AnimatePresence } from 'framer-motion';
 
 interface CaseStudy {
   title: string;
@@ -11,17 +12,27 @@ interface CaseStudy {
 }
 
 function CaseModal({ caseStudy, onClose }: { caseStudy: CaseStudy; onClose: () => void }) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <div
+    <motion.div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
     >
-      <div
+      <motion.div
         className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
         onClick={(e) => e.stopPropagation()}
+        initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.95, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={shouldReduceMotion ? {} : { opacity: 0, scale: 0.95, y: 20 }}
+        transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center z-10">
           <h3 id="modal-title" className="text-2xl font-bold text-text-primary">
@@ -67,13 +78,14 @@ function CaseModal({ caseStudy, onClose }: { caseStudy: CaseStudy; onClose: () =
             <p className="text-text-primary">{caseStudy.result}</p>
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
 export function Portfolio() {
   const [selectedCase, setSelectedCase] = useState<CaseStudy | null>(null);
+  const shouldReduceMotion = useReducedMotion();
 
   const cases: CaseStudy[] = [
     {
@@ -106,10 +118,37 @@ export function Portfolio() {
     },
   ];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+      },
+    },
+  };
+
   return (
     <section id="portfolio" className="bg-ui-muted-bg py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-full mb-6 shadow-sm">
             <span className="text-sm font-semibold text-accent-1 uppercase tracking-wide">
               Flagship Projects
@@ -121,13 +160,29 @@ export function Portfolio() {
           <p className="text-lg md:text-xl text-muted max-w-3xl mx-auto">
             We measure success by outcomes — faster launches, lower costs, happier users.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial={shouldReduceMotion ? false : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={containerVariants}
+        >
           {cases.map((caseStudy, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+              variants={itemVariants}
+              whileHover={
+                shouldReduceMotion
+                  ? {}
+                  : {
+                      y: -6,
+                      boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)',
+                      transition: { duration: 0.2, ease: 'easeOut' },
+                    }
+              }
+              className="group bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer"
               onClick={() => setSelectedCase(caseStudy)}
             >
               <div className="aspect-video bg-gradient-to-br from-accent-3/20 to-accent-1/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
@@ -147,12 +202,14 @@ export function Portfolio() {
                   <ExternalLink size={14} />
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
-      {selectedCase && <CaseModal caseStudy={selectedCase} onClose={() => setSelectedCase(null)} />}
+      <AnimatePresence>
+        {selectedCase && <CaseModal caseStudy={selectedCase} onClose={() => setSelectedCase(null)} />}
+      </AnimatePresence>
     </section>
   );
 }
