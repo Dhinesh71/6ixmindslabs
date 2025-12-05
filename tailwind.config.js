@@ -15,6 +15,8 @@ export default {
   			'accent-2': '#A13EA8',
   			'accent-3': '#C6A3E0',
   			'ui-muted-bg': '#F5F5F7',
+  			'brand-purple': '#8A3FFC',
+  			'brand-pink': '#FF5CA3',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
