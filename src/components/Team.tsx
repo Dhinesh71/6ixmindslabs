@@ -1,6 +1,10 @@
 import { Linkedin, Github, Mail } from 'lucide-react';
+<<<<<<< HEAD
 import TextType from './TextType';
 import { useState } from 'react';
+=======
+import { motion, useReducedMotion } from 'framer-motion';
+>>>>>>> e4ed5e0af0c168be6d25567d2223d1276905ddb0
 
 interface TeamMemberProps {
   name: string;
@@ -15,22 +19,29 @@ interface TeamMemberProps {
 }
 
 function TeamMember({ name, role, bio, expertise, social }: TeamMemberProps) {
-  const [isHovered, setIsHovered] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div
-      className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+    <motion.div
+      className="group relative bg-white rounded-xl overflow-hidden shadow-lg"
+      whileHover={
+        shouldReduceMotion
+          ? {}
+          : {
+              y: -6,
+              boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)',
+              transition: { duration: 0.2, ease: 'easeOut' },
+            }
+      }
     >
       <div className="aspect-square bg-gradient-to-br from-accent-3/30 to-accent-1/30 flex items-center justify-center relative overflow-hidden">
-        <div
-          className={`w-32 h-32 rounded-full bg-gradient-to-br from-accent-1 to-accent-2 flex items-center justify-center text-white text-4xl font-bold transition-all duration-300 ${
-            isHovered ? 'scale-110 rotate-6' : ''
-          }`}
+        <motion.div
+          className="w-32 h-32 rounded-full bg-gradient-to-br from-accent-1 to-accent-2 flex items-center justify-center text-white text-4xl font-bold"
+          whileHover={shouldReduceMotion ? {} : { scale: 1.1, rotate: 6 }}
+          transition={{ duration: 0.2, ease: 'easeOut' }}
         >
           {name.charAt(0)}
-        </div>
+        </motion.div>
       </div>
 
       <div className="p-6">
@@ -97,11 +108,13 @@ function TeamMember({ name, role, bio, expertise, social }: TeamMemberProps) {
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 export function Team() {
+  const shouldReduceMotion = useReducedMotion();
+
   const team: TeamMemberProps[] = [
     {
       name: "Dhinesh V",
@@ -177,11 +190,40 @@ export function Team() {
     },
   ];
 
+<<<<<<< HEAD
+=======
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+      },
+    },
+  };
+>>>>>>> e4ed5e0af0c168be6d25567d2223d1276905ddb0
 
   return (
     <section id="team" className="bg-ui-muted-bg py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-full mb-6 shadow-sm">
             <span className="text-sm font-semibold text-accent-1 uppercase tracking-wide">
               Our Team
@@ -193,13 +235,21 @@ export function Team() {
           <p className="text-lg md:text-xl text-muted max-w-3xl mx-auto">
             Senior engineers from top tech companies, now building for ambitious startups.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+          initial={shouldReduceMotion ? false : 'hidden'}
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={containerVariants}
+        >
           {team.map((member, index) => (
-            <TeamMember key={index} {...member} />
+            <motion.div key={index} variants={itemVariants}>
+              <TeamMember {...member} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <div className="bg-gradient-to-br from-accent-1 to-accent-2 rounded-2xl p-8 md:p-12 text-center text-white">
           <h3 className="text-2xl md:text-3xl font-bold mb-4">Need specialized expertise?</h3>
