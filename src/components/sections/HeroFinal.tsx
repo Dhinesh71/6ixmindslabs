@@ -1,9 +1,149 @@
 import { ArrowRight } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { CTAButton } from '../motion/CTAButton';
-import { Scene3D } from '../3d/Scene3D';
-import { FloatingSphere } from '../3d/FloatingSphere';
 import { Container } from '../layout/Container';
+
+interface PhoneMockupProps {
+  position: 'left' | 'right';
+  delay: number;
+  shouldReduceMotion: boolean;
+}
+
+function PhoneMockup({ position, delay, shouldReduceMotion }: PhoneMockupProps) {
+  const isLeft = position === 'left';
+
+  return (
+    <motion.div
+      className={`absolute ${
+        isLeft ? 'left-[15%] top-[20%] z-10' : 'right-[10%] top-[35%] z-20'
+      }`}
+      initial={{ opacity: 0, y: 40, scale: 0.8 }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        ...(shouldReduceMotion
+          ? {}
+          : {
+              y: isLeft ? [0, -15, 0] : [0, 15, 0],
+            }),
+      }}
+      transition={{
+        opacity: { duration: 0.6, delay },
+        y: { duration: 0.6, delay },
+        scale: { duration: 0.6, delay },
+        ...(shouldReduceMotion
+          ? {}
+          : {
+              y: {
+                duration: 4,
+                ease: 'easeInOut',
+                repeat: Infinity,
+                repeatType: 'reverse',
+                delay: delay + 0.6,
+              },
+            }),
+      }}
+      style={{
+        transformStyle: 'preserve-3d',
+        transform: shouldReduceMotion
+          ? 'none'
+          : isLeft
+          ? 'perspective(1200px) rotateY(-15deg) rotateZ(-8deg)'
+          : 'perspective(1200px) rotateY(12deg) rotateZ(5deg)',
+      }}
+    >
+      <div className="relative w-[180px] h-[360px] md:w-[220px] md:h-[440px]">
+        <div className="relative w-full h-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-[2.5rem] p-3 shadow-2xl flex items-center justify-center">
+          <div className="w-full h-full bg-white rounded-[2.25rem] overflow-hidden relative flex flex-col">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-7 bg-gray-900 rounded-b-3xl z-10 flex items-center justify-center">
+              <div className="w-12 h-1 bg-gray-700 rounded-full mt-2"></div>
+            </div>
+
+            <div className="flex-1 flex flex-col pt-10 px-5">
+              {isLeft ? (
+                <>
+                  <div className="mb-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="h-3 bg-gray-800 rounded w-20"></div>
+                      <div className="w-8 h-8 bg-gradient-to-br from-brand-purple to-brand-pink rounded-full"></div>
+                    </div>
+                    <div className="h-8 bg-gradient-to-r from-brand-purple to-brand-pink rounded-xl w-3/4 mb-2"></div>
+                    <div className="h-3 bg-gray-300 rounded w-1/2"></div>
+                  </div>
+
+                  <div className="space-y-3 flex-1">
+                    <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-4 border border-purple-100">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="h-2.5 bg-brand-purple rounded w-16"></div>
+                        <div className="h-2 bg-gray-300 rounded w-12"></div>
+                      </div>
+                      <div className="h-2 bg-gray-200 rounded w-20"></div>
+                    </div>
+
+                    <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-4 border border-purple-100">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="h-2.5 bg-brand-purple rounded w-16"></div>
+                        <div className="h-2 bg-gray-300 rounded w-12"></div>
+                      </div>
+                      <div className="h-2 bg-gray-200 rounded w-20"></div>
+                    </div>
+
+                    <div className="bg-gray-100 rounded-2xl p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="h-2.5 bg-gray-400 rounded w-16"></div>
+                        <div className="h-2 bg-gray-300 rounded w-12"></div>
+                      </div>
+                      <div className="h-2 bg-gray-200 rounded w-20"></div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 pb-6">
+                    <div className="h-12 bg-gradient-to-r from-brand-purple via-purple-600 to-brand-pink rounded-2xl shadow-lg flex items-center justify-center">
+                      <div className="w-16 h-1 bg-white/60 rounded-full"></div>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="mb-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="h-3 bg-gray-800 rounded w-24"></div>
+                      <div className="w-8 h-8 bg-gradient-to-br from-brand-pink to-purple-500 rounded-full"></div>
+                    </div>
+                    <div className="space-y-2 mb-4">
+                      <div className="h-4 bg-gray-800 rounded w-32"></div>
+                      <div className="h-6 bg-gradient-to-r from-brand-pink to-purple-500 rounded-lg w-24"></div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3 flex-1">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <div key={i} className="flex items-center gap-3">
+                        <div className={`w-10 h-10 ${
+                          i % 2 === 0
+                            ? 'bg-gradient-to-br from-brand-purple to-purple-500'
+                            : 'bg-gradient-to-br from-brand-pink to-pink-400'
+                        } rounded-full flex-shrink-0`}></div>
+                        <div className="flex-1 space-y-1.5">
+                          <div className="flex items-center justify-between">
+                            <div className="h-2 bg-gray-700 rounded w-20"></div>
+                            <div className="h-2 bg-gray-400 rounded w-10"></div>
+                          </div>
+                          <div className="h-1.5 bg-gray-300 rounded w-16"></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 export function HeroFinal() {
   const shouldReduceMotion = useReducedMotion();
@@ -94,17 +234,28 @@ export function HeroFinal() {
             </motion.div>
           </motion.div>
 
-          <motion.div
-            className="relative h-[400px] md:h-[500px] lg:h-[600px]"
-            initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <Scene3D className="w-full h-full" enableControls>
-              <FloatingSphere color="#8A3FFC" speed={1} radius={1.2} distort={0.3} />
-              <FloatingSphere color="#FF5CA3" speed={0.8} radius={0.6} distort={0.5} />
-            </Scene3D>
-          </motion.div>
+          <div className="relative h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center">
+            <PhoneMockup position="left" delay={0.4} shouldReduceMotion={shouldReduceMotion} />
+            <PhoneMockup position="right" delay={0.6} shouldReduceMotion={shouldReduceMotion} />
+
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
+              <motion.div
+                className="absolute w-72 h-72 bg-purple-300/20 rounded-full blur-3xl"
+                animate={shouldReduceMotion ? {} : { scale: [1, 1.15, 1] }}
+                transition={{ duration: 8, ease: 'easeInOut', repeat: Infinity }}
+              />
+              <motion.div
+                className="absolute w-64 h-64 bg-pink-300/15 rounded-full blur-3xl"
+                animate={shouldReduceMotion ? {} : { scale: [1, 1.1, 1] }}
+                transition={{
+                  duration: 9,
+                  ease: 'easeInOut',
+                  repeat: Infinity,
+                  delay: 1,
+                }}
+              />
+            </div>
+          </div>
         </div>
       </Container>
     </section>
