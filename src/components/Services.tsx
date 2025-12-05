@@ -1,7 +1,4 @@
 import { Code2, Brain, Cpu, ArrowRight } from 'lucide-react';
-<<<<<<< HEAD
-import PixelCard from './PixelCard';
-=======
 import { motion, useReducedMotion } from 'framer-motion';
 
 interface ServiceCardProps {
@@ -17,7 +14,7 @@ function ServiceCard({ icon, title, description, features, cta }: ServiceCardPro
 
   if (shouldReduceMotion) {
     return (
-      <div className="relative bg-white border-2 border-gray-200 rounded-xl p-8 cursor-pointer">
+      <div className="relative bg-white border-2 border-gray-200 rounded-xl p-8 cursor-pointer h-full">
         <div className="relative z-10">
           <div className="flex items-start space-x-4 mb-6">
             <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-accent-1 to-accent-2 rounded-lg flex items-center justify-center text-white">
@@ -49,7 +46,7 @@ function ServiceCard({ icon, title, description, features, cta }: ServiceCardPro
 
   return (
     <motion.div
-      className="group relative bg-white border-2 border-gray-200 rounded-xl p-8 cursor-pointer"
+      className="group relative bg-white border-2 border-gray-200 rounded-xl p-8 cursor-pointer h-full"
       whileHover={{
         y: -8,
         boxShadow: '0 20px 40px rgba(198, 163, 224, 0.25)',
@@ -103,7 +100,6 @@ function ServiceCard({ icon, title, description, features, cta }: ServiceCardPro
     </motion.div>
   );
 }
->>>>>>> e4ed5e0af0c168be6d25567d2223d1276905ddb0
 
 export function Services() {
   const shouldReduceMotion = useReducedMotion();
@@ -192,28 +188,6 @@ export function Services() {
           </p>
         </motion.div>
 
-<<<<<<< HEAD
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, idx) => (
-            <PixelCard key={idx} variant="pink" className="service-card">
-              <div className="service-content">
-                <div className="service-icon-box">
-                  {service.icon}
-                </div>
-                <h3 className="service-title">{service.title}</h3>
-                <p className="service-description">{service.description}</p>
-                <ul className="service-features">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex}>{feature}</li>
-                  ))}
-                </ul>
-                <button className="service-cta border-4 border-gray-500 rounded-[2.5rem]" aria-label={service.cta}>
-                  <span>{service.cta}</span>
-                  <ArrowRight size={16} />
-                </button>
-              </div>
-            </PixelCard>
-=======
         <motion.div
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           initial={shouldReduceMotion ? false : 'hidden'}
@@ -225,7 +199,6 @@ export function Services() {
             <motion.div key={index} variants={itemVariants}>
               <ServiceCard {...service} />
             </motion.div>
->>>>>>> e4ed5e0af0c168be6d25567d2223d1276905ddb0
           ))}
         </motion.div>
       </div>

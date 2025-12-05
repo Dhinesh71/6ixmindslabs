@@ -18,7 +18,6 @@ interface TextTypeProps {
   pauseDuration?: number;
   deletingSpeed?: number;
   loop?: boolean;
-  textColors?: string[];
   variableSpeed?: { min: number; max: number };
   onSentenceComplete?: (sentence: string, index: number) => void;
   startOnVisible?: boolean;
@@ -39,7 +38,6 @@ const TextType = ({
   cursorCharacter = '|',
   cursorClassName = '',
   cursorBlinkDuration = 0.5,
-  textColors = [],
   variableSpeed,
   onSentenceComplete,
   startOnVisible = false,
@@ -62,10 +60,7 @@ const TextType = ({
     return Math.random() * (max - min) + min;
   }, [variableSpeed, typingSpeed]);
 
-  const getCurrentTextColor = () => {
-    if (textColors.length === 0) return;
-    return textColors[currentTextIndex % textColors.length];
-  };
+  // removed unused getCurrentTextColor to satisfy linter
 
   useEffect(() => {
     if (!startOnVisible || !containerRef.current) return;
@@ -165,7 +160,8 @@ const TextType = ({
     isVisible,
     reverseMode,
     variableSpeed,
-    onSentenceComplete
+    onSentenceComplete,
+    getRandomSpeed
   ]);
 
   const shouldHideCursor =
