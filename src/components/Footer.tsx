@@ -25,13 +25,7 @@ export function Footer() {
               >
                 <Linkedin size={18} />
               </a>
-              <a
-                href="#"
-                className="p-2 bg-white/10 rounded-lg hover:bg-accent-1 transition-all"
-                aria-label="Twitter"
-              >
-                <Twitter size={18} />
-              </a>
+              
               <a
                 href="#"
                 className="p-2 bg-white/10 rounded-lg hover:bg-accent-1 transition-all"
@@ -53,17 +47,26 @@ export function Footer() {
             <h3 className="font-bold mb-4">Services</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <a href="#services" className="hover:text-white transition-colors">
+                <a
+                  href="#services"
+                  className="hover:text-white transition-colors"
+                >
                   Full-Stack Web
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-white transition-colors">
+                <a
+                  href="#services"
+                  className="hover:text-white transition-colors"
+                >
                   AI & Machine Learning
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-white transition-colors">
+                <a
+                  href="#services"
+                  className="hover:text-white transition-colors"
+                >
                   IoT Solutions
                 </a>
               </li>
@@ -79,12 +82,18 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#portfolio" className="hover:text-white transition-colors">
+                <a
+                  href="#portfolio"
+                  className="hover:text-white transition-colors"
+                >
                   Portfolio
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-white transition-colors">
+                <a
+                  href="#contact"
+                  className="hover:text-white transition-colors"
+                >
                   Contact
                 </a>
               </li>
@@ -95,17 +104,29 @@ export function Footer() {
             <h3 className="font-bold mb-4">Get in Touch</h3>
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
-                <a href="mailto:hello@6ixminds.com" className="hover:text-white transition-colors">
-                  hello@6ixminds.com
+                <a
+                  href="mailto:hello@6ixminds.com"
+                  className="hover:text-white transition-colors"
+                >
+                  6ixmindslabs@gmail.com
                 </a>
               </li>
               <li>
-                <a href="tel:+1234567890" className="hover:text-white transition-colors">
-                  +1 (234) 567-890
+                  <a
+                  href="tel:+919025873422"
+                  className="hover:text-white transition-colors"
+                >
+                  +919025873422 
+                </a> <br/>
+                 <a
+                  href="tel:+919080534488"
+                  className="hover:text-white transition-colors"
+                >
+                     +919080534488
                 </a>
               </li>
               <li className="pt-2">
-                <p className="text-gray-500 text-xs">Toronto, Canada</p>
+                <p className="text-gray-500 text-xs">Tamilnadu, India</p>
               </li>
             </ul>
           </div>
@@ -115,14 +136,7 @@ export function Footer() {
           <p className="text-sm text-gray-400">
             &copy; {currentYear} 6ixminds Labs. All rights reserved.
           </p>
-          <div className="flex space-x-6 text-sm text-gray-400">
-            <a href="#" className="hover:text-white transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Terms of Service
-            </a>
-          </div>
+        
         </div>
 
         <div className="mt-8 flex justify-center">

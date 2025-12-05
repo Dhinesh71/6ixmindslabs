@@ -1,60 +1,5 @@
 import { Code2, Brain, Cpu, ArrowRight } from 'lucide-react';
-import { useState } from 'react';
-
-interface ServiceCardProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  features: string[];
-  cta: string;
-}
-
-function ServiceCard({ icon, title, description, features, cta }: ServiceCardProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <div
-      className="group relative bg-white border-2 border-gray-200 rounded-xl p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-accent-3/20 hover:-translate-y-2 cursor-pointer"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="absolute inset-0 bg-gradient-to-br from-accent-3/0 to-accent-3/0 group-hover:from-accent-3/5 group-hover:to-accent-1/5 rounded-xl transition-all duration-300"></div>
-
-      <div className="relative z-10">
-        <div className="flex items-start space-x-4 mb-6">
-          <div
-            className={`flex-shrink-0 w-14 h-14 bg-gradient-to-br from-accent-1 to-accent-2 rounded-lg flex items-center justify-center text-white transition-all duration-300 ${
-              isHovered ? 'scale-110 rotate-6' : ''
-            }`}
-          >
-            {icon}
-          </div>
-          <div>
-            <h3 className="text-2xl font-bold text-text-primary mb-2">{title}</h3>
-            <p className="text-muted">{description}</p>
-          </div>
-        </div>
-
-        <ul className="space-y-3 mb-6">
-          {features.map((feature, index) => (
-            <li key={index} className="flex items-start space-x-3">
-              <div className="flex-shrink-0 w-1.5 h-1.5 bg-accent-1 rounded-full mt-2"></div>
-              <span className="text-text-primary">{feature}</span>
-            </li>
-          ))}
-        </ul>
-
-        <button className="group/btn flex items-center space-x-2 text-accent-1 font-semibold hover:text-accent-2 transition-colors">
-          <span className="uppercase tracking-wide text-sm">{cta}</span>
-          <ArrowRight
-            size={16}
-            className="group-hover/btn:translate-x-1 transition-transform"
-          />
-        </button>
-      </div>
-    </div>
-  );
-}
+import PixelCard from './PixelCard';
 
 export function Services() {
   const services = [
@@ -115,8 +60,25 @@ export function Services() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <ServiceCard key={index} {...service} />
+          {services.map((service, idx) => (
+            <PixelCard key={idx} variant="pink" className="service-card">
+              <div className="service-content">
+                <div className="service-icon-box">
+                  {service.icon}
+                </div>
+                <h3 className="service-title">{service.title}</h3>
+                <p className="service-description">{service.description}</p>
+                <ul className="service-features">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex}>{feature}</li>
+                  ))}
+                </ul>
+                <button className="service-cta border-4 border-gray-500 rounded-[2.5rem]" aria-label={service.cta}>
+                  <span>{service.cta}</span>
+                  <ArrowRight size={16} />
+                </button>
+              </div>
+            </PixelCard>
           ))}
         </div>
       </div>

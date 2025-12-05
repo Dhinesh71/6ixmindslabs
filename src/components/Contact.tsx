@@ -48,9 +48,10 @@ export function Contact() {
               Start with a free scoping call
             </h2>
 
-            <p className="text-lg text-muted mb-8">
-              No sales pitch. Just a 15-minute technical conversation about your goals, timeline,
-              and budget. We'll tell you honestly if we're the right fit.
+            <p className="text-lg text-muted mb-8 text-gray-700">
+              No sales pitch. Just a 15-minute technical conversation about your
+              goals, timeline, and budget. We'll tell you honestly if we're the
+              right fit.
             </p>
 
             <div className="space-y-6">
@@ -59,8 +60,12 @@ export function Contact() {
                   <User size={24} className="text-accent-1" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-text-primary mb-1">Quick response</h3>
-                  <p className="text-muted text-sm">We reply within 24 hours on business days</p>
+                  <h3 className="font-bold text-text-primary mb-1">
+                    Quick response
+                  </h3>
+                  <p className="text-muted text-sm text-gray-700">
+                    We reply within 24 hours on business days
+                  </p>
                 </div>
               </div>
 
@@ -69,8 +74,10 @@ export function Contact() {
                   <MessageSquare size={24} className="text-accent-1" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-text-primary mb-1">No commitment</h3>
-                  <p className="text-muted text-sm">
+                  <h3 className="font-bold text-text-primary mb-1">
+                    No commitment
+                  </h3>
+                  <p className="text-muted text-sm text-gray-700">
                     Zero pressure — we only work together if it makes sense
                   </p>
                 </div>
@@ -81,11 +88,16 @@ export function Contact() {
                   <Mail size={24} className="text-accent-1" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-text-primary mb-1">Direct contact</h3>
-                  <p className="text-muted text-sm">
-                    Email us directly at{' '}
-                    <a href="mailto:hello@6ixminds.com" className="text-accent-1 font-semibold">
-                      hello@6ixminds.com
+                  <h3 className="font-bold text-text-primary mb-1">
+                    Direct contact
+                  </h3>
+                  <p className="text-muted text-sm text-gray-700">
+                    Email us directly at{" "}
+                    <a
+                      href="mailto:6ixmindslabs@gmail.com"
+                      className="text-accent-1 font-semibold"
+                    >
+                      6ixmindslabs@gmail.com
                     </a>
                   </p>
                 </div>
@@ -97,13 +109,20 @@ export function Contact() {
             {isSubmitted ? (
               <div className="flex flex-col items-center justify-center py-12 text-center">
                 <CheckCircle size={64} className="text-green-500 mb-4" />
-                <h3 className="text-2xl font-bold text-text-primary mb-2">Thank you!</h3>
-                <p className="text-muted">We'll get back to you within 24 hours.</p>
+                <h3 className="text-2xl font-bold text-text-primary mb-2">
+                  Thank you!
+                </h3>
+                <p className="text-muted">
+                  We'll get back to you within 24 hours.
+                </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-text-primary mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-semibold text-text-primary mb-2"
+                  >
                     Name *
                   </label>
                   <input
@@ -119,7 +138,10 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-text-primary mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-semibold text-text-primary mb-2"
+                  >
                     Email *
                   </label>
                   <input
@@ -135,7 +157,10 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="company" className="block text-sm font-semibold text-text-primary mb-2">
+                  <label
+                    htmlFor="company"
+                    className="block text-sm font-semibold text-text-primary mb-2"
+                  >
                     Company
                   </label>
                   <input
@@ -150,7 +175,10 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-text-primary mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-semibold text-text-primary mb-2"
+                  >
                     Project details *
                   </label>
                   <textarea
@@ -181,7 +209,8 @@ export function Contact() {
                 </button>
 
                 <p className="text-xs text-muted text-center">
-                  By submitting, you agree to our privacy policy. We never share your data.
+                  By submitting, you agree to our privacy policy. We never share
+                  your data.
                 </p>
               </form>
             )}

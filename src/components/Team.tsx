@@ -1,4 +1,5 @@
 import { Linkedin, Github, Mail } from 'lucide-react';
+import TextType from './TextType';
 import { useState } from 'react';
 
 interface TeamMemberProps {
@@ -34,7 +35,16 @@ function TeamMember({ name, role, bio, expertise, social }: TeamMemberProps) {
 
       <div className="p-6">
         <h3 className="text-xl font-bold text-text-primary mb-1">{name}</h3>
-        <p className="text-accent-1 font-semibold mb-3">{role}</p>
+        <p className="text-accent-1 font-semibold mb-3">
+          <TextType
+            text={[role]}
+            typingSpeed={65}
+            pauseDuration={1600}
+            loop={false}
+            showCursor={false}
+            className="feature-typed"
+          />
+        </p>
         <p className="text-muted mb-4 text-sm">{bio}</p>
 
         <div className="mb-4">
@@ -94,39 +104,79 @@ function TeamMember({ name, role, bio, expertise, social }: TeamMemberProps) {
 export function Team() {
   const team: TeamMemberProps[] = [
     {
-      name: 'Alex Chen',
-      role: 'Lead Engineer',
-      bio: 'Full-stack architect with 10+ years building scalable systems. Ex-Amazon, Stanford CS.',
-      expertise: ['React', 'Node.js', 'AWS', 'System Design'],
+      name: "Dhinesh V",
+      role: "Full-Stack Developer",
+      bio: "Developer focused on building scalable web applications using MERN stack. Handles end-to-end architecture, backend APIs, and UI engineering.",
+      expertise: [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "System Architecture",
+      ],
       social: {
-        linkedin: '#',
-        github: '#',
-        email: 'alex@6ixminds.com',
+        linkedin: "https://www.linkedin.com/in/dhinesh-v-690289292/",
+        github: "https://github.com/Dhinesh71",
+        email: "dhineshjk17@gmail.com",
       },
     },
     {
-      name: 'Sarah Kim',
-      role: 'AI/ML Engineer',
-      bio: 'ML researcher turned practitioner. Specializes in LLMs, computer vision, and edge AI.',
-      expertise: ['PyTorch', 'OpenAI', 'CV', 'MLOps'],
+      name: "Dileep V",
+      role: "Embedded Systems Trainee",
+      bio: "Beginner-level embedded engineer learning microcontroller programming and IoT fundamentals. Supports hardware testing and prototype development.",
+      expertise: ["C Programming", "Arduino", "Basic Electronics"],
       social: {
-        linkedin: '#',
-        github: '#',
-        email: 'sarah@6ixminds.com',
+        linkedin: "#",
+        github: "#",
+        email: "dileep@6ixminds.com",
       },
     },
     {
-      name: 'Marcus Liu',
-      role: 'IoT Specialist',
-      bio: 'Hardware hacker and embedded systems expert. Built 50+ IoT prototypes to production.',
-      expertise: ['ESP32', 'MQTT', 'TensorFlow Lite', 'PCB'],
+      name: "Sathish S",
+      role: "Digital Marketing & Video Production",
+      bio: "Creates marketing assets, manages brand visuals, and produces videos for campaigns and promotions.",
+      expertise: ["Video Editing", "Branding", "Social Media Marketing"],
       social: {
-        linkedin: '#',
-        github: '#',
-        email: 'marcus@6ixminds.com',
+        linkedin: "#",
+        github: "#",
+        email: "sathish@6ixminds.com",
+      },
+    },
+    {
+      name: "Anandh M",
+      role: "IoT & Embedded Engineer",
+      bio: "Works on IoT solutions, embedded firmware, and hardware integration. Focuses on microcontrollers and sensor-based systems.",
+      expertise: ["ESP32", "IoT Systems", "Embedded C", "Sensors"],
+      social: {
+        linkedin: "#",
+        github: "#",
+        email: "anandh@6ixminds.com",
+      },
+    },
+    {
+      name: "Nithish Kumar B",
+      role: "Embedded Systems Trainee",
+      bio: "Learning embedded development with a focus on microcontrollers and circuit-level troubleshooting.",
+      expertise: ["C Programming", "Arduino", "Circuit Basics"],
+      social: {
+        linkedin: "#",
+        github: "#",
+        email: "nithish@6ixminds.com",
+      },
+    },
+    {
+      name: "Prabhakar M",
+      role: "Digital Marketing & Embedded Support",
+      bio: "Works across marketing and hardware support. Assists in IoT prototyping and manages campaign execution.",
+      expertise: ["Digital Marketing", "IoT Basics", "Embedded Support"],
+      social: {
+        linkedin: "#",
+        github: "#",
+        email: "prabhakar@6ixminds.com",
       },
     },
   ];
+
 
   return (
     <section id="team" className="bg-ui-muted-bg py-20 md:py-32">

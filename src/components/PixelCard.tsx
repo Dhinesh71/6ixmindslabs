@@ -292,7 +292,7 @@ export default function PixelCard({
       onBlur={finalNoFocus ? undefined : onBlur}
       tabIndex={finalNoFocus ? -1 : 0}
     >
-      <canvas className="pixel-canvas" ref={canvasRef} />
+      <canvas className="pixel-canvas" ref={canvasRef} aria-hidden="true" />
       {children}
     </div>
   );
