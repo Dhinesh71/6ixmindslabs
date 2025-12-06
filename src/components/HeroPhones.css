@@ -6,19 +6,19 @@
   justify-content: center;
   perspective: 1400px;
   position: relative;
-  min-height: 500px;
+  min-height: 280px;
 }
 
 .phones-wrapper {
   position: relative;
   width: 100%;
   max-width: 1000px;
-  height: 300px;
+  height: 280px;
   transform-style: preserve-3d;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1rem;
+  padding: 1rem 0.5rem;
 }
 
 .phone-mockup {
@@ -36,35 +36,35 @@
 }
 
 .phone-left {
-  left: 10%;
-  top: 1%;
-  transform: translate(-70%, -50%) rotateY(12deg) rotateX(3deg) rotateZ(-10deg);
+  left: 35%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotateY(10deg) rotateX(2deg) rotateZ(-8deg) scale(0.85);
   z-index: 20;
 }
 
 .phone-right {
-  left: 45%;
-  top: 1/2%;
-  transform: translate(-30%, -50%) rotateY(-12deg) rotateX(3deg) rotateZ(10deg) scale(0.9);
+  left: 65%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotateY(-10deg) rotateX(2deg) rotateZ(8deg) scale(0.75);
   z-index: 10;
 }
 
 .phone-image {
-  width: clamp(150px, 21vw, 280px);
+  width: clamp(100px, 18vw, 180px);
   height: auto;
   display: block;
   object-fit: contain;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 .phone-left .phone-image {
-  width: clamp(155px, 22vw, 290px);
+  width: clamp(105px, 19vw, 190px);
   height: auto;
 }
 
 .phone-right .phone-image {
-  width: clamp(145px, 20vw, 270px);
-  height: 25rem;
+  width: clamp(95px, 17vw, 170px);
+  height: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -79,186 +79,225 @@
 
 @media (max-width: 1024px) {
   .phones-wrapper {
-    height: 500px;
+    height: 420px;
   }
 
   .phone-left {
-    left: 60%;
-    top: 20%;
-    transform: translate(-75%, -50%) rotateY(12deg) rotateX(3deg) rotateZ(-10deg) scale(0.95);
+    left: 38%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotateY(10deg) rotateX(2deg) rotateZ(-8deg) scale(0.9);
   }
 
   .phone-right {
-    left: 65%;
-    top: 30%;
-    transform: translate(-25%, -50%) rotateY(-12deg) rotateX(3deg) rotateZ(10deg) scale(0.85);
+    left: 62%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotateY(-10deg) rotateX(2deg) rotateZ(8deg) scale(0.8);
   }
 
   .phone-image {
-    width: clamp(140px, 19vw, 240px);
+    width: clamp(130px, 18vw, 220px);
   }
 
   .phone-left .phone-image {
-    width: clamp(145px, 20vw, 250px);
+    width: clamp(135px, 19vw, 230px);
   }
 
   .phone-right .phone-image {
-    width: clamp(135px, 18vw, 230px);
+    width: clamp(125px, 17vw, 210px);
   }
 
   .hero-phones-container {
-    min-height: 450px;
+    min-height: 420px;
   }
 }
 
 @media (max-width: 768px) {
   .phones-wrapper {
-    height: 420px;
-    padding: 1.5rem 0.75rem;
+    height: 360px;
+    padding: 1.25rem 0.75rem;
   }
 
   .phone-left {
-    left: 65%;
-    top: 15%;
-    transform: translate(-80%, -50%) rotateY(10deg) rotateX(2deg) rotateZ(-8deg) scale(0.9);
+    left: 37%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotateY(9deg) rotateX(2deg) rotateZ(-7deg) scale(0.87);
   }
 
   .phone-right {
-    left: 70%;
-    top: 25%;
-    transform: translate(-20%, -50%) rotateY(-10deg) rotateX(2deg) rotateZ(8deg) scale(0.8);
+    left: 63%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotateY(-9deg) rotateX(2deg) rotateZ(7deg) scale(0.77);
   }
 
   .phone-image {
-    width: clamp(120px, 23vw, 200px);
+    width: clamp(110px, 20vw, 175px);
   }
 
   .phone-left .phone-image {
-    width: clamp(125px, 24vw, 210px);
+    width: clamp(115px, 21vw, 185px);
   }
 
   .phone-right .phone-image {
-    width: clamp(115px, 22vw, 190px);
+    width: clamp(105px, 19vw, 165px);
   }
 
   .phone-mockup {
-    filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.18))
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.18))
             drop-shadow(0 6px 12px rgba(0, 0, 0, 0.08));
   }
 
   .hero-phones-container {
-    min-height: 380px;
+    min-height: 360px;
   }
 }
 
 @media (max-width: 640px) {
   .phones-wrapper {
-    height: 360px;
+    height: 320px;
     padding: 1rem 0.5rem;
   }
 
   .phone-left {
-    left: 70%;
-    top: 10%;
-    transform: translate(-85%, -50%) rotateY(8deg) rotateX(2deg) rotateZ(-6deg) scale(0.85);
+    left: 35%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotateY(9deg) rotateX(2deg) rotateZ(-7deg) scale(0.82);
   }
 
   .phone-right {
-    left: 75%;
-    top: 20%;
-    transform: translate(-15%, -50%) rotateY(-8deg) rotateX(2deg) rotateZ(6deg) scale(0.75);
+    left: 65%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotateY(-9deg) rotateX(2deg) rotateZ(7deg) scale(0.72);
   }
 
   .phone-image {
-    width: clamp(110px, 27vw, 175px);
+    width: clamp(95px, 24vw, 155px);
   }
 
   .phone-left .phone-image {
-    width: clamp(115px, 28vw, 185px);
+    width: clamp(100px, 25vw, 165px);
   }
 
   .phone-right .phone-image {
-    width: clamp(105px, 26vw, 165px);
+    width: clamp(90px, 23vw, 145px);
   }
 
   .phone-mockup {
-    filter: drop-shadow(0 15px 28px rgba(0, 0, 0, 0.15))
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.15))
             drop-shadow(0 5px 10px rgba(0, 0, 0, 0.06));
   }
 
   .hero-phones-container {
-    min-height: 340px;
+    min-height: 320px;
   }
 }
 
 @media (max-width: 480px) {
   .phones-wrapper {
-    height: 320px;
+    height: 280px;
     padding: 0.75rem 0;
   }
 
   .phone-left {
-    left: 75%;
-    top: 5%;
-    transform: translate(-90%, -50%) rotateY(6deg) rotateX(1deg) rotateZ(-5deg) scale(0.8);
+    left: 35%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotateY(8deg) rotateX(2deg) rotateZ(-6deg) scale(0.8);
   }
 
   .phone-right {
-    left: 80%;
-    top: 15%;
-    transform: translate(-10%, -50%) rotateY(-6deg) rotateX(1deg) rotateZ(5deg) scale(0.7);
+    left: 65%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotateY(-8deg) rotateX(2deg) rotateZ(6deg) scale(0.7);
   }
 
   .phone-image {
-    width: clamp(95px, 29vw, 150px);
+    width: clamp(85px, 25vw, 130px);
   }
 
   .phone-left .phone-image {
-    width: clamp(100px, 30vw, 160px);
+    width: clamp(90px, 26vw, 140px);
   }
 
   .phone-right .phone-image {
-    width: clamp(90px, 28vw, 140px);
+    width: clamp(80px, 24vw, 120px);
   }
 
   .phone-mockup {
-    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.12))
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.12))
             drop-shadow(0 4px 8px rgba(0, 0, 0, 0.05));
   }
 
   .hero-phones-container {
-    min-height: 300px;
+    min-height: 280px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .phones-wrapper {
+    height: 480px;
+  }
+
+  .phone-left {
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotateY(12deg) rotateX(3deg) rotateZ(-10deg) scale(0.95);
+  }
+
+  .phone-right {
+    left: 60%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotateY(-12deg) rotateX(3deg) rotateZ(10deg) scale(0.85);
+  }
+
+  .phone-image {
+    width: clamp(160px, 20vw, 240px);
+  }
+
+  .phone-left .phone-image {
+    width: clamp(170px, 21vw, 250px);
+  }
+
+  .phone-right .phone-image {
+    width: clamp(150px, 19vw, 230px);
+  }
+
+  .phone-mockup {
+    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.25))
+            drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+  }
+
+  .hero-phones-container {
+    min-height: 480px;
   }
 }
 
 @media (min-width: 1440px) {
   .phones-wrapper {
-    height: 650px;
+    height: 550px;
     max-width: 1100px;
   }
 
   .phone-left {
-    left: 50%;
+    left: 40%;
     top: 50%;
-    transform: translate(-65%, -50%) rotateY(14deg) rotateX(4deg) rotateZ(-12deg) scale(1.05);
+    transform: translate(-50%, -50%) rotateY(14deg) rotateX(4deg) rotateZ(-12deg) scale(1.05);
   }
 
   .phone-right {
-    left: 50%;
+    left: 60%;
     top: 50%;
-    transform: translate(-35%, -50%) rotateY(-14deg) rotateX(4deg) rotateZ(12deg) scale(0.95);
+    transform: translate(-50%, -50%) rotateY(-14deg) rotateX(4deg) rotateZ(12deg) scale(0.95);
   }
 
   .phone-image {
-    width: clamp(240px, 23vw, 320px);
+    width: clamp(200px, 22vw, 280px);
   }
 
   .phone-left .phone-image {
-    width: clamp(250px, 24vw, 330px);
+    width: clamp(210px, 23vw, 290px);
   }
 
   .phone-right .phone-image {
-    width: clamp(230px, 22vw, 310px);
+    width: clamp(190px, 21vw, 270px);
   }
 
   .phone-mockup {

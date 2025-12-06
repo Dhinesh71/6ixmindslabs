@@ -29,21 +29,23 @@ export function HeroFinal() {
   };
 
   return (
-    <section className="relative bg-white pt-6 sm:pt-8 md:pt-12 lg:pt-16 pb-8 sm:pb-12 md:pb-16 lg:pb-20 overflow-hidden min-h-screen sm:min-h-[90vh] lg:min-h-[85vh] flex items-center justify-center">
-      <div className="absolute inset-0 pointer-events-none opacity-40">
-        <div className="absolute top-8 sm:top-16 md:top-20 left-4 sm:left-10 w-48 sm:w-80 md:w-96 h-48 sm:h-80 md:h-96 bg-purple-300/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-4 sm:bottom-10 right-4 sm:right-16 md:right-20 w-56 sm:w-96 md:w-[500px] h-56 sm:h-96 md:h-[500px] bg-pink-300/15 rounded-full blur-3xl" />
+    <section className="relative bg-white pt-16 sm:pt-20 md:pt-24 lg:pt-28 pb-6 sm:pb-10 md:pb-16 lg:pb-20 overflow-hidden min-h-[calc(100vh-4rem)] sm:min-h-[90vh] lg:min-h-[85vh] flex items-center justify-center">
+      {/* Background decoration blurs */}
+      <div className="absolute inset-0 pointer-events-none opacity-30 sm:opacity-40">
+        <div className="absolute top-4 sm:top-8 md:top-16 lg:top-20 left-2 sm:left-4 md:left-10 w-32 sm:w-48 md:w-80 lg:w-96 h-32 sm:h-48 md:h-80 lg:h-96 bg-purple-300/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-2 sm:bottom-4 md:bottom-10 right-2 sm:right-4 md:right-16 lg:right-20 w-40 sm:w-56 md:w-96 lg:w-[500px] h-40 sm:h-56 md:h-96 lg:h-[500px] bg-pink-300/15 rounded-full blur-3xl" />
       </div>
 
       <Container className="relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center w-full">
+          {/* Left Column - Text Content */}
           <motion.div
-            className="flex flex-col items-start justify-center text-left gap-4 sm:gap-6 md:gap-8"
+            className="flex flex-col items-start justify-center text-left gap-3 sm:gap-4 md:gap-6 lg:gap-8 order-1 lg:order-1"
             initial={shouldReduceMotion ? false : 'hidden'}
             animate="visible"
           >
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight"
+              className="text-[2rem] leading-[1.15] sm:text-4xl sm:leading-tight md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight"
               custom={0}
               variants={fadeUpVariants}
             >
@@ -63,7 +65,7 @@ export function HeroFinal() {
             </motion.h1>
 
             <motion.p
-              className="text-sm sm:text-base md:text-lg text-gray-600 max-w-xl font-medium leading-relaxed"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-xl font-medium leading-relaxed"
               custom={0.15}
               variants={fadeUpVariants}
             >
@@ -71,30 +73,31 @@ export function HeroFinal() {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto mt-1 sm:mt-2"
               custom={0.3}
               variants={fadeUpVariants}
             >
               <CTAButton
                 onClick={scrollToContact}
                 variant="primary"
-                className="flex items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm md:text-base uppercase tracking-wide shadow-xl shadow-purple-500/20 min-h-tap px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-3.5"
+                className="flex items-center justify-center gap-2 text-xs sm:text-sm md:text-base uppercase tracking-wide shadow-xl shadow-purple-500/20 min-h-tap px-5 sm:px-6 md:px-8 py-3 sm:py-3 md:py-4 font-bold whitespace-nowrap"
               >
-                <span>Book a 15-min call</span>
-                <ArrowRight size={16} className="sm:w-5 sm:h-5" />
+                <span className="leading-none">Book a 15-min call</span>
+                <ArrowRight size={16} className="sm:w-4 sm:h-4 md:w-5 md:h-5 flex-shrink-0" />
               </CTAButton>
               <CTAButton
                 onClick={scrollToPortfolio}
                 variant="secondary"
-                className="flex items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm md:text-base uppercase tracking-wide min-h-tap px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-3.5"
+                className="flex items-center justify-center gap-2 text-xs sm:text-sm md:text-base uppercase tracking-wide min-h-tap px-5 sm:px-6 md:px-8 py-3 sm:py-3 md:py-4 font-bold whitespace-nowrap"
               >
-                <span>View products</span>
+                <span className="leading-none">View products</span>
               </CTAButton>
             </motion.div>
           </motion.div>
 
+          {/* Right Column - Phone Mockups */}
           <motion.div
-            className="flex items-center justify-center w-full h-full"
+            className="flex items-center justify-center w-full h-full order-2 lg:order-2 min-h-[280px] sm:min-h-[350px] md:min-h-[400px]"
             initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
