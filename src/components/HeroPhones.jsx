@@ -6,15 +6,17 @@ export default function HeroPhones() {
 
   const leftPhoneVariants = {
     animate: {
-      y: shouldReduceMotion ? 0 : [0, -22, 0],
-      rotateZ: shouldReduceMotion ? 0 : [0, 1.2, 0],
+      y: shouldReduceMotion ? 0 : [0, -28, 0],
+      rotateZ: shouldReduceMotion ? 0 : [0, 1.5, 0],
+      scale: shouldReduceMotion ? 1 : [1, 1.02, 1],
     },
   };
 
   const rightPhoneVariants = {
     animate: {
-      y: shouldReduceMotion ? 0 : [0, 22, 0],
-      rotateZ: shouldReduceMotion ? 0 : [0, -1.2, 0],
+      y: shouldReduceMotion ? 0 : [0, 28, 0],
+      rotateZ: shouldReduceMotion ? 0 : [0, -1.5, 0],
+      scale: shouldReduceMotion ? 1 : [1, 0.98, 1],
     },
   };
 
