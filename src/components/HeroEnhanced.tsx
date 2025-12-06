@@ -198,7 +198,7 @@ function PhoneMockup({ position, delay, shouldReduceMotion }: PhoneMockupProps) 
     <motion.div
       className={`absolute ${
         isLeft ? 'left-1/4 -translate-x-1/2' : 'right-0'
-      } top-1/3 -translate-y-1/2`}
+      } top-1/4-translate-y-1/2`}
       initial={{ opacity: 0, y: 40, scale: 0.8 }}
       animate={{
         opacity: 1,

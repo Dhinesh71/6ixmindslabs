@@ -13,7 +13,7 @@
   position: relative;
   width: 100%;
   max-width: 1000px;
-  height: 600px;
+  height: 300px;
   transform-style: preserve-3d;
   display: flex;
   align-items: center;
@@ -36,15 +36,15 @@
 }
 
 .phone-left {
-  left: 50%;
-  top: 50%;
+  left: 10%;
+  top: 1%;
   transform: translate(-70%, -50%) rotateY(12deg) rotateX(3deg) rotateZ(-10deg);
   z-index: 20;
 }
 
 .phone-right {
-  left: 50%;
-  top: 50%;
+  left: 45%;
+  top: 1/2%;
   transform: translate(-30%, -50%) rotateY(-12deg) rotateX(3deg) rotateZ(10deg) scale(0.9);
   z-index: 10;
 }
@@ -59,10 +59,12 @@
 
 .phone-left .phone-image {
   width: clamp(155px, 22vw, 290px);
+  height: auto;
 }
 
 .phone-right .phone-image {
   width: clamp(145px, 20vw, 270px);
+  height: 25rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -81,14 +83,14 @@
   }
 
   .phone-left {
-    left: 50%;
-    top: 50%;
+    left: 60%;
+    top: 20%;
     transform: translate(-75%, -50%) rotateY(12deg) rotateX(3deg) rotateZ(-10deg) scale(0.95);
   }
 
   .phone-right {
-    left: 50%;
-    top: 50%;
+    left: 65%;
+    top: 30%;
     transform: translate(-25%, -50%) rotateY(-12deg) rotateX(3deg) rotateZ(10deg) scale(0.85);
   }
 
@@ -116,14 +118,14 @@
   }
 
   .phone-left {
-    left: 50%;
-    top: 50%;
+    left: 65%;
+    top: 15%;
     transform: translate(-80%, -50%) rotateY(10deg) rotateX(2deg) rotateZ(-8deg) scale(0.9);
   }
 
   .phone-right {
-    left: 50%;
-    top: 50%;
+    left: 70%;
+    top: 25%;
     transform: translate(-20%, -50%) rotateY(-10deg) rotateX(2deg) rotateZ(8deg) scale(0.8);
   }
 
@@ -156,14 +158,14 @@
   }
 
   .phone-left {
-    left: 50%;
-    top: 50%;
+    left: 70%;
+    top: 10%;
     transform: translate(-85%, -50%) rotateY(8deg) rotateX(2deg) rotateZ(-6deg) scale(0.85);
   }
 
   .phone-right {
-    left: 50%;
-    top: 50%;
+    left: 75%;
+    top: 20%;
     transform: translate(-15%, -50%) rotateY(-8deg) rotateX(2deg) rotateZ(6deg) scale(0.75);
   }
 
@@ -196,14 +198,14 @@
   }
 
   .phone-left {
-    left: 50%;
-    top: 50%;
+    left: 75%;
+    top: 5%;
     transform: translate(-90%, -50%) rotateY(6deg) rotateX(1deg) rotateZ(-5deg) scale(0.8);
   }
 
   .phone-right {
-    left: 50%;
-    top: 50%;
+    left: 80%;
+    top: 15%;
     transform: translate(-10%, -50%) rotateY(-6deg) rotateX(1deg) rotateZ(5deg) scale(0.7);
   }
 
