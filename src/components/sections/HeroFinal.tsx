@@ -2,143 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { CTAButton } from '../motion/CTAButton';
 import { Container } from '../layout/Container';
-
-interface PhoneMockupProps {
-  position: 'left' | 'right';
-  delay: number;
-  shouldReduceMotion: boolean;
-}
-
-function PhoneMockup({ position, delay, shouldReduceMotion }: PhoneMockupProps) {
-  const isLeft = position === 'left';
-
-  return (
-    <motion.div
-      className={`absolute ${
-        isLeft ? 'left-[15%] top-[20%] z-10' : 'right-[10%] top-[35%] z-20'
-      }`}
-      initial={{ opacity: 0, y: 20, scale: 0.95 }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        ...(shouldReduceMotion
-          ? {}
-          : {
-              y: [0, -3, 0],
-            }),
-      }}
-      transition={{
-        opacity: { duration: 0.6, delay },
-        y: { duration: 0.6, delay },
-        scale: { duration: 0.6, delay },
-        ...(shouldReduceMotion
-          ? {}
-          : {
-              y: {
-                duration: 7,
-                ease: 'easeInOut',
-                repeat: Infinity,
-                repeatType: 'reverse',
-                delay: delay + 0.6,
-              },
-            }),
-      }}
-      style={{
-        transformStyle: 'preserve-3d',
-      }}
-    >
-      <div className="relative w-[180px] h-[360px] md:w-[220px] md:h-[440px]">
-        <div className="relative w-full h-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-[2.5rem] p-3 shadow-2xl flex items-center justify-center">
-          <div className="w-full h-full bg-white rounded-[2.25rem] overflow-hidden relative flex flex-col">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-7 bg-gray-900 rounded-b-3xl z-10 flex items-center justify-center">
-              <div className="w-12 h-1 bg-gray-700 rounded-full mt-2"></div>
-            </div>
-
-            <div className="flex-1 flex flex-col pt-10 px-5">
-              {isLeft ? (
-                <>
-                  <div className="mb-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="h-3 bg-gray-800 rounded w-20"></div>
-                      <div className="w-8 h-8 bg-gradient-to-br from-brand-purple to-brand-pink rounded-full"></div>
-                    </div>
-                    <div className="h-8 bg-gradient-to-r from-brand-purple to-brand-pink rounded-xl w-3/4 mb-2"></div>
-                    <div className="h-3 bg-gray-300 rounded w-1/2"></div>
-                  </div>
-
-                  <div className="space-y-3 flex-1">
-                    <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-4 border border-purple-100">
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="h-2.5 bg-brand-purple rounded w-16"></div>
-                        <div className="h-2 bg-gray-300 rounded w-12"></div>
-                      </div>
-                      <div className="h-2 bg-gray-200 rounded w-20"></div>
-                    </div>
-
-                    <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-4 border border-purple-100">
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="h-2.5 bg-brand-purple rounded w-16"></div>
-                        <div className="h-2 bg-gray-300 rounded w-12"></div>
-                      </div>
-                      <div className="h-2 bg-gray-200 rounded w-20"></div>
-                    </div>
-
-                    <div className="bg-gray-100 rounded-2xl p-4">
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="h-2.5 bg-gray-400 rounded w-16"></div>
-                        <div className="h-2 bg-gray-300 rounded w-12"></div>
-                      </div>
-                      <div className="h-2 bg-gray-200 rounded w-20"></div>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 pb-6">
-                    <div className="h-12 bg-gradient-to-r from-brand-purple via-purple-600 to-brand-pink rounded-2xl shadow-lg flex items-center justify-center">
-                      <div className="w-16 h-1 bg-white/60 rounded-full"></div>
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="mb-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="h-3 bg-gray-800 rounded w-24"></div>
-                      <div className="w-8 h-8 bg-gradient-to-br from-brand-pink to-purple-500 rounded-full"></div>
-                    </div>
-                    <div className="space-y-2 mb-4">
-                      <div className="h-4 bg-gray-800 rounded w-32"></div>
-                      <div className="h-6 bg-gradient-to-r from-brand-pink to-purple-500 rounded-lg w-24"></div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-3 flex-1">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <div key={i} className="flex items-center gap-3">
-                        <div className={`w-10 h-10 ${
-                          i % 2 === 0
-                            ? 'bg-gradient-to-br from-brand-purple to-purple-500'
-                            : 'bg-gradient-to-br from-brand-pink to-pink-400'
-                        } rounded-full flex-shrink-0`}></div>
-                        <div className="flex-1 space-y-1.5">
-                          <div className="flex items-center justify-between">
-                            <div className="h-2 bg-gray-700 rounded w-20"></div>
-                            <div className="h-2 bg-gray-400 rounded w-10"></div>
-                          </div>
-                          <div className="h-1.5 bg-gray-300 rounded w-16"></div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
+import { AnimatedPhoneMockups } from '../AnimatedPhoneMockups';
 
 export function HeroFinal() {
   const shouldReduceMotion = useReducedMotion();
@@ -165,21 +29,21 @@ export function HeroFinal() {
   };
 
   return (
-    <section className="relative bg-white pt-24 md:pt-32 pb-12 md:pb-20 overflow-hidden min-h-[85vh] flex items-center">
+    <section className="relative bg-white pt-6 md:pt-8 lg:pt-10 pb-12 md:pb-20 overflow-hidden min-h-[85vh] flex items-center mt-4 md:mt-6 lg:mt-8">
       <div className="absolute inset-0 pointer-events-none opacity-40">
         <div className="absolute top-20 left-10 w-96 h-96 bg-purple-300/20 rounded-full blur-3xl" />
         <div className="absolute bottom-10 right-20 w-[500px] h-[500px] bg-pink-300/15 rounded-full blur-3xl" />
       </div>
 
       <Container className="relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           <motion.div
             className="flex flex-col items-start justify-center text-left gap-6 md:gap-8"
             initial={shouldReduceMotion ? false : 'hidden'}
             animate="visible"
           >
             <motion.h1
-              className="text-heading-1 font-extrabold leading-tight tracking-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight"
               custom={0}
               variants={fadeUpVariants}
             >
@@ -199,7 +63,7 @@ export function HeroFinal() {
             </motion.h1>
 
             <motion.p
-              className="text-body-lg text-gray-600 max-w-xl font-medium leading-relaxed"
+              className="text-base md:text-lg text-gray-600 max-w-xl font-medium leading-relaxed"
               custom={0.15}
               variants={fadeUpVariants}
             >
@@ -224,14 +88,13 @@ export function HeroFinal() {
                 variant="secondary"
                 className="flex items-center justify-center gap-3 text-sm md:text-base uppercase tracking-wide min-h-tap px-6 md:px-8 py-4"
               >
-                <span>View projects</span>
+                <span>View products</span>
               </CTAButton>
             </motion.div>
           </motion.div>
 
-          <div className="relative h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center">
-            <PhoneMockup position="left" delay={0.4} shouldReduceMotion={shouldReduceMotion} />
-            <PhoneMockup position="right" delay={0.6} shouldReduceMotion={shouldReduceMotion} />
+          <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] sm:flex items-center justify-center hidden">
+            <AnimatedPhoneMockups />
 
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
               <motion.div

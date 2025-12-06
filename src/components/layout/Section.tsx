@@ -30,7 +30,7 @@ export function Section({
   const content = (
     <section
       id={id}
-      className={`relative py-12 md:py-20 lg:py-28 overflow-hidden ${backgrounds[background]} ${className}`}
+      className={`relative py-4 md:py-8 lg:py-10 overflow-hidden ${backgrounds[background]} ${className}`}
     >
       <Container size={containerSize}>{children}</Container>
     </section>

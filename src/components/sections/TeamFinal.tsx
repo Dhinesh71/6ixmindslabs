@@ -1,8 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { CircularTeamGallery } from '../CircularTeamGallery';
 import { Section } from '../layout/Section';
-import { Scene3D } from '../3d/Scene3D';
-import { FloatingSphere } from '../3d/FloatingSphere';
 
 export function TeamFinal() {
   const shouldReduceMotion = useReducedMotion();
@@ -59,12 +57,6 @@ export function TeamFinal() {
   return (
     <Section id="team" background="white" containerSize="default">
       <div className="relative">
-        <div className="absolute top-1/4 right-0 w-64 h-64 md:w-80 md:h-80 opacity-20 pointer-events-none hidden xl:block">
-          <Scene3D className="w-full h-full">
-            <FloatingSphere color="#8A3FFC" speed={0.8} radius={0.9} distort={0.45} />
-          </Scene3D>
-        </div>
-
         <motion.div
           className="text-center mb-12 md:mb-16 relative z-10"
           initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}

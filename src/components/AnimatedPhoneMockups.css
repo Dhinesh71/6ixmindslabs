@@ -1,0 +1,365 @@
+/* Floating Animation Keyframes - Matching Interactive UI Section */
+@keyframes float-up {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-down {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+/* Container for both phones */
+.phones-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+/* Individual phone mockup */
+.phone-mockup {
+  width: 180px;
+  height: 360px;
+  flex-shrink: 0;
+}
+
+/* Left phone: floats up */
+.phone-left {
+  animation: float-up 5s ease-in-out infinite;
+}
+
+/* Right phone: floats down */
+.phone-right {
+  animation: float-down 5s ease-in-out infinite;
+}
+
+/* Phone frame and styling */
+.phone-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #111827, #1f2937, #111827);
+  border-radius: 40px;
+  padding: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 36px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Notch */
+.phone-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 96px;
+  height: 28px;
+  background-color: #111827;
+  border-radius: 0 0 24px 24px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-notch::after {
+  content: '';
+  width: 48px;
+  height: 4px;
+  background-color: #374151;
+  border-radius: 9999px;
+  margin-top: 8px;
+}
+
+/* Phone content area */
+.phone-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow: hidden;
+}
+
+/* Header */
+.phone-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.header-text {
+  width: 80px;
+  height: 12px;
+  background-color: #1f2937;
+  border-radius: 4px;
+}
+
+.header-text-long {
+  width: 96px;
+}
+
+.header-badge {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  border-radius: 50%;
+}
+
+.header-badge.badge-pink {
+  background: linear-gradient(135deg, #ec4899, #a855f7);
+}
+
+/* CTA Section */
+.phone-cta {
+  margin-bottom: 24px;
+}
+
+.cta-bar {
+  width: 64px;
+  height: 32px;
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(168, 85, 247, 0.2);
+}
+
+/* Subheader for right phone */
+.phone-subheader {
+  margin-bottom: 16px;
+}
+
+.subheader-title {
+  width: 128px;
+  height: 16px;
+  background-color: #1f2937;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.subheader-subtitle {
+  width: 96px;
+  height: 24px;
+  background: linear-gradient(to right, #ec4899, #a855f7);
+  border-radius: 8px;
+}
+
+/* Cards Section */
+.phone-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.card {
+  background: linear-gradient(to bottom right, #faf5ff, #fce7f3);
+  border: 1px solid #e9d5ff;
+  border-radius: 24px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.card-title {
+  width: 64px;
+  height: 10px;
+  background-color: #a855f7;
+  border-radius: 4px;
+}
+
+.card-meta {
+  width: 48px;
+  height: 8px;
+  background-color: #d1d5db;
+  border-radius: 4px;
+}
+
+.card-subtitle {
+  width: 80px;
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+}
+
+.card-3 {
+  background-color: #f3f4f6;
+  border-color: #e5e7eb;
+}
+
+/* List Section */
+.phone-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.list-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.list-item.item-0 .list-avatar {
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+}
+
+.list-item.item-1 .list-avatar {
+  background: linear-gradient(135deg, #ec4899, #f43f5e);
+}
+
+.list-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.list-title {
+  width: 80px;
+  height: 8px;
+  background-color: #374151;
+  border-radius: 4px;
+}
+
+.list-subtitle {
+  width: 64px;
+  height: 6px;
+  background-color: #d1d5db;
+  border-radius: 4px;
+}
+
+/* Button Section */
+.phone-button {
+  margin-top: 24px;
+  padding-bottom: 24px;
+}
+
+.button-bar {
+  width: 64px;
+  height: 4px;
+  background-color: #f0f0f0;
+  border-radius: 9999px;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .phone-mockup {
+    width: 220px;
+    height: 440px;
+  }
+
+  .phone-frame {
+    padding: 15px;
+  }
+
+  .phone-notch {
+    width: 120px;
+    height: 32px;
+    border-radius: 0 0 28px 28px;
+  }
+
+  .phone-notch::after {
+    width: 60px;
+    height: 5px;
+  }
+
+  .phone-content {
+    padding-top: 50px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .phones-container {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .phones-container {
+    gap: 20px;
+  }
+
+  .phone-mockup {
+    width: 160px;
+    height: 320px;
+  }
+
+  .phone-frame {
+    padding: 10px;
+  }
+
+  .phone-content {
+    padding-top: 36px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 0.875rem;
+  }
+  /* Increase mobile movement and speed: larger translate + faster duration */
+  @keyframes float-up {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-22px);
+    }
+  }
+
+  @keyframes float-down {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(22px);
+    }
+  }
+
+  /* Override animation duration on small screens to make motion feel slightly quicker */
+  .phone-left {
+    animation-duration: 3.5s;
+  }
+
+  .phone-right {
+    animation-duration: 3.5s;
+  }
+}

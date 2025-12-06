@@ -5,8 +5,6 @@ import { CTAButton } from '../motion/CTAButton';
 import Lottie from 'lottie-react';
 import successTick from '../../../public/lottie/success-tick.json';
 import { Section } from '../layout/Section';
-import { Scene3D } from '../3d/Scene3D';
-import { FloatingSphere } from '../3d/FloatingSphere';
 
 export function ContactFinal() {
   const shouldReduceMotion = useReducedMotion();
@@ -47,12 +45,6 @@ export function ContactFinal() {
   return (
     <Section id="contact" background="gradient" containerSize="default">
       <div className="relative">
-        <div className="absolute top-0 right-1/4 w-80 h-80 opacity-15 pointer-events-none hidden xl:block">
-          <Scene3D className="w-full h-full">
-            <FloatingSphere color="#A13EA8" speed={0.5} radius={1.1} distort={0.3} />
-          </Scene3D>
-        </div>
-
         <div className="grid lg:grid-cols-2 gap-10 md:gap-12 items-start relative z-10">
           <motion.div
             initial={shouldReduceMotion ? false : { opacity: 0, x: -30 }}

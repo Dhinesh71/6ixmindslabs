@@ -4,8 +4,6 @@ import { useState, Suspense, lazy } from 'react';
 import Lottie from 'lottie-react';
 import serviceIcon from '../../../public/lottie/service-icon.json';
 import { Section } from '../layout/Section';
-import { Scene3D } from '../3d/Scene3D';
-import { FloatingSphere } from '../3d/FloatingSphere';
 
 const SpotlightCard = lazy(() => import('../SpotlightCard'));
 
@@ -95,15 +93,6 @@ function ServiceCard({ icon, title, description, features, cta, color }: Service
               </motion.li>
             ))}
           </ul>
-
-          <motion.button
-            className="flex items-center gap-2 text-brand-purple font-semibold hover:text-brand-pink transition-colors min-h-tap"
-            whileHover={shouldReduceMotion ? {} : { x: 4 }}
-            transition={{ duration: 0.15 }}
-          >
-            <span className="uppercase tracking-wide text-sm">{cta}</span>
-            <ArrowRight size={16} />
-          </motion.button>
         </motion.div>
       </SpotlightCard>
     </Suspense>
@@ -158,12 +147,6 @@ export function ServicesFinal() {
   return (
     <Section id="services" background="white" containerSize="default">
       <div className="relative">
-        <div className="absolute top-0 right-0 w-64 h-64 md:w-80 md:h-80 opacity-30 pointer-events-none hidden lg:block">
-          <Scene3D className="w-full h-full">
-            <FloatingSphere color="#A13EA8" speed={0.7} radius={0.8} distort={0.4} />
-          </Scene3D>
-        </div>
-
         <motion.div
           className="text-center mb-12 md:mb-16 relative z-10"
           initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}

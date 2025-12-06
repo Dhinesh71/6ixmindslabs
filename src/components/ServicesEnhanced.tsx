@@ -9,7 +9,7 @@ interface ServiceCardProps {
   title: string;
   description: string;
   features: string[];
-  cta: string;
+ 
 }
 
 function ServiceCard({
@@ -17,7 +17,6 @@ function ServiceCard({
   title,
   description,
   features,
-  cta,
 }: ServiceCardProps) {
   const shouldReduceMotion = useReducedMotion();
   const [isHovered, setIsHovered] = useState(false);
@@ -47,10 +46,7 @@ function ServiceCard({
             ))}
           </ul>
 
-          <button className="flex items-center space-x-2 text-[#8A3FFC] font-semibold hover:text-[#FF5CA3] transition-colors">
-            <span className="uppercase tracking-wide text-sm">{cta}</span>
-            <ArrowRight size={16} />
-          </button>
+         
         </div>
       </div>
     );

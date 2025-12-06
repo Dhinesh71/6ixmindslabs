@@ -57,7 +57,7 @@ export function Navigation() {
               onClick={() => scrollToSection("portfolio")}
               className="text-text-primary hover:text-accent-1 transition-colors font-medium nav-glow"
             >
-              Work
+              Products
             </button>
             <button
               onClick={() => scrollToSection("team")}

@@ -3,8 +3,6 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { useEffect, useRef, useState, Suspense, lazy } from 'react';
 import VanillaTilt from 'vanilla-tilt';
 import { Section } from '../layout/Section';
-import { Scene3D } from '../3d/Scene3D';
-import { FloatingSphere } from '../3d/FloatingSphere';
 import projects from '../../data/projects';
 
 const PixelCard = lazy(() => import('../PixelCard'));
@@ -189,12 +187,6 @@ export function PortfolioFinal() {
   return (
     <Section id="portfolio" background="gradient" containerSize="default">
       <div className="relative">
-        <div className="absolute bottom-0 left-0 w-72 h-72 md:w-96 md:h-96 opacity-25 pointer-events-none hidden lg:block">
-          <Scene3D className="w-full h-full">
-            <FloatingSphere color="#FF5CA3" speed={0.6} radius={1} distort={0.35} />
-          </Scene3D>
-        </div>
-
         <motion.div
           className="text-center mb-12 md:mb-16 relative z-10"
           initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}

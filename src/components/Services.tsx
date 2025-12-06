@@ -115,7 +115,7 @@ export function Services() {
         'PostgreSQL, MongoDB, Redis',
         'AWS, Vercel, Docker deployment',
       ],
-      cta: 'Get estimate',
+     
     },
     {
       icon: <Brain size={28} />,
@@ -127,7 +127,7 @@ export function Services() {
         'RAG & vector search (Pinecone, Weaviate)',
         'Fine-tuning & model optimization',
       ],
-      cta: 'See scope',
+     
     },
     {
       icon: <Cpu size={28} />,
@@ -139,7 +139,7 @@ export function Services() {
         'Edge ML inference (TensorFlow Lite)',
         'Cloud dashboards & monitoring',
       ],
-      cta: 'Get estimate',
+     
     },
   ];
 
