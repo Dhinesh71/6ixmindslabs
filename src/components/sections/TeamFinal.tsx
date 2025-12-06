@@ -58,19 +58,19 @@ export function TeamFinal() {
     <Section id="team" background="white" containerSize="default">
       <div className="relative">
         <motion.div
-          className="text-center mb-12 md:mb-16 relative z-10"
+          className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 relative z-10"
           initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="inline-flex items-center gap-2 bg-white px-5 py-2.5 rounded-full mb-6 shadow-sm border border-purple-100">
-            <span className="text-sm font-semibold text-brand-purple uppercase tracking-wide">
+          <div className="inline-flex items-center gap-2 bg-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full mb-4 sm:mb-6 shadow-sm border border-purple-100">
+            <span className="text-xs sm:text-sm font-semibold text-brand-purple uppercase tracking-wide">
               Our Team
             </span>
           </div>
 
-          <h2 className="text-heading-2 font-extrabold text-text-primary mb-6">
+          <h2 className="text-heading-2 font-extrabold text-text-primary mb-4 sm:mb-6">
             Engineers who{' '}
             <span
               className="bg-gradient-to-r from-brand-purple to-brand-pink bg-clip-text text-transparent inline-block"
@@ -83,7 +83,7 @@ export function TeamFinal() {
             </span>
           </h2>
 
-          <p className="text-body-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-body-lg text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
             Experienced engineers from diverse backgrounds, now building for
             ambitious startups.
           </p>

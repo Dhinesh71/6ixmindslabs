@@ -31,7 +31,7 @@ function ServiceCard({ icon, title, description, features, cta, color }: Service
         spotlightColor="rgba(138, 63, 252, 0.08)"
       >
         <motion.div
-          className="p-6 md:p-8 h-full flex flex-col"
+          className="p-4 sm:p-5 md:p-6 lg:p-8 h-full flex flex-col"
           onHoverStart={() => setIsHovered(true)}
           onHoverEnd={() => setIsHovered(false)}
           whileHover={
@@ -43,9 +43,9 @@ function ServiceCard({ icon, title, description, features, cta, color }: Service
                 }
           }
         >
-          <div className="flex items-start gap-4 mb-6">
+          <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-5 md:mb-6">
             <motion.div
-              className="relative flex-shrink-0 w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-brand-purple to-brand-pink rounded-xl flex items-center justify-center text-white shadow-lg"
+              className="relative flex-shrink-0 w-12 sm:w-14 md:w-16 h-12 sm:h-14 md:h-16 bg-gradient-to-br from-brand-purple to-brand-pink rounded-xl flex items-center justify-center text-white shadow-lg"
               whileHover={
                 shouldReduceMotion
                   ? {}
@@ -71,14 +71,14 @@ function ServiceCard({ icon, title, description, features, cta, color }: Service
             </motion.div>
 
             <div className="flex-1 min-w-0">
-              <h3 className="text-heading-4 font-bold text-text-primary mb-2 break-words">
+              <h3 className="text-heading-4 font-bold text-text-primary mb-1 sm:mb-2 break-words">
                 {title}
               </h3>
               <p className="text-body-sm text-gray-600 break-words">{description}</p>
             </div>
           </div>
 
-          <ul className="space-y-3 mb-6 flex-grow">
+          <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-5 md:mb-6 flex-grow">
             {features.map((feature, index) => (
               <motion.li
                 key={index}
@@ -148,19 +148,19 @@ export function ServicesFinal() {
     <Section id="services" background="white" containerSize="default">
       <div className="relative">
         <motion.div
-          className="text-center mb-12 md:mb-16 relative z-10"
+          className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 relative z-10"
           initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-50 to-pink-50 px-5 py-2.5 rounded-full mb-6 border border-purple-100">
-            <span className="text-sm font-semibold text-brand-purple uppercase tracking-wide">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-50 to-pink-50 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full mb-4 sm:mb-6 border border-purple-100">
+            <span className="text-xs sm:text-sm font-semibold text-brand-purple uppercase tracking-wide">
               What We Do
             </span>
           </div>
 
-          <h2 className="text-heading-2 font-extrabold text-text-primary mb-6">
+          <h2 className="text-heading-2 font-extrabold text-text-primary mb-4 sm:mb-6">
             End-to-end technical{' '}
             <span
               className="bg-gradient-to-r from-brand-purple to-brand-pink bg-clip-text text-transparent inline-block"
@@ -173,14 +173,14 @@ export function ServicesFinal() {
             </span>
           </h2>
 
-          <p className="text-body-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-body-lg text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
             We handle the full stack — from frontend UX to cloud infrastructure,
             AI models to physical hardware.
           </p>
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 relative z-10"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8 relative z-10"
           initial={shouldReduceMotion ? false : 'hidden'}
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}

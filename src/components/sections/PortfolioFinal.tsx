@@ -130,20 +130,20 @@ function ProjectCard({
                 </motion.div>
               </div>
 
-              <div className="p-6">
+              <div className="p-4 sm:p-5 md:p-6">
                 <motion.span
-                  className="inline-block bg-gradient-to-r from-purple-100 to-pink-100 text-brand-purple px-3 py-1.5 rounded-full text-xs md:text-sm font-semibold mb-3 border border-purple-200"
+                  className="inline-block bg-gradient-to-r from-purple-100 to-pink-100 text-brand-purple px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs md:text-sm font-semibold mb-2 sm:mb-3 border border-purple-200"
                   whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
                   transition={{ duration: 0.12 }}
                 >
                   {category}
                 </motion.span>
 
-                <h3 className="text-heading-4 font-bold text-text-primary mb-3 hover:text-brand-purple transition-colors break-words">
+                <h3 className="text-heading-4 font-bold text-text-primary mb-2 sm:mb-3 hover:text-brand-purple transition-colors break-words">
                   {title}
                 </h3>
 
-                <p className="text-body-sm text-gray-600 mb-4 line-clamp-2 leading-relaxed">
+                <p className="text-body-sm text-gray-600 mb-3 sm:mb-4 line-clamp-2 leading-relaxed">
                   {description}
                 </p>
 
@@ -188,19 +188,19 @@ export function PortfolioFinal() {
     <Section id="portfolio" background="gradient" containerSize="default">
       <div className="relative">
         <motion.div
-          className="text-center mb-12 md:mb-16 relative z-10"
+          className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 relative z-10"
           initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="inline-flex items-center gap-2 bg-white px-5 py-2.5 rounded-full mb-6 shadow-sm border border-purple-100">
-            <span className="text-sm font-semibold text-brand-purple uppercase tracking-wide">
+          <div className="inline-flex items-center gap-2 bg-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full mb-4 sm:mb-6 shadow-sm border border-purple-100">
+            <span className="text-xs sm:text-sm font-semibold text-brand-purple uppercase tracking-wide">
               Flagship Projects
             </span>
           </div>
 
-          <h2 className="text-heading-2 font-extrabold text-text-primary mb-6">
+          <h2 className="text-heading-2 font-extrabold text-text-primary mb-4 sm:mb-6">
             Real products,{' '}
             <span
               className="bg-gradient-to-r from-brand-purple to-brand-pink bg-clip-text text-transparent inline-block"
@@ -213,14 +213,14 @@ export function PortfolioFinal() {
             </span>
           </h2>
 
-          <p className="text-body-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-body-lg text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
             We measure success by outcomes — faster launches, lower costs,
             happier users.
           </p>
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 relative z-10"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8 relative z-10"
           initial={shouldReduceMotion ? false : 'hidden'}
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}

@@ -7,46 +7,46 @@ export function FooterFinal() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <footer className="bg-text-primary text-white py-12 md:py-16 overflow-hidden">
+    <footer className="bg-text-primary text-white py-8 sm:py-12 md:py-16 overflow-hidden">
       <Container>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 lg:gap-12 mb-8 sm:mb-10 md:mb-12">
           <motion.div
             initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-brand-purple to-brand-pink rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">6</span>
+            <div className="flex items-center gap-2 mb-3 sm:mb-4">
+              <div className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-brand-purple to-brand-pink rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-base sm:text-lg">6</span>
               </div>
               <span className="text-heading-4 font-bold">6ixminds Labs</span>
             </div>
-            <p className="text-body-sm text-gray-400 mb-4 leading-relaxed">
+            <p className="text-body-sm text-gray-400 mb-3 sm:mb-4 leading-relaxed">
               Engineering-first shop for Full-Stack, AI, and IoT solutions.
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-2 sm:gap-3">
               <motion.a
                 href="#"
-                className="p-2 md:p-3 bg-white/10 rounded-lg hover:bg-brand-purple transition-all min-h-tap min-w-[44px] flex items-center justify-center"
+                className="p-1.5 sm:p-2 md:p-3 bg-white/10 rounded-lg hover:bg-brand-purple transition-all min-h-tap min-w-[44px] flex items-center justify-center"
                 aria-label="LinkedIn"
                 whileHover={shouldReduceMotion ? {} : { scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Linkedin size={18} />
+                <Linkedin size={16} className="sm:w-[18px] sm:h-[18px]" />
               </motion.a>
               <motion.a
                 href="#"
-                className="p-2 md:p-3 bg-white/10 rounded-lg hover:bg-brand-purple transition-all min-h-tap min-w-[44px] flex items-center justify-center"
+                className="p-1.5 sm:p-2 md:p-3 bg-white/10 rounded-lg hover:bg-brand-purple transition-all min-h-tap min-w-[44px] flex items-center justify-center"
                 aria-label="GitHub"
                 whileHover={shouldReduceMotion ? {} : { scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Github size={18} />
+                <Github size={16} className="sm:w-[18px] sm:h-[18px]" />
               </motion.a>
               <motion.a
                 href="mailto:6ixmindslabs@gmail.com"
-                className="p-2 md:p-3 bg-white/10 rounded-lg hover:bg-brand-purple transition-all min-h-tap min-w-[44px] flex items-center justify-center"
+                className="p-1.5 sm:p-2 md:p-3 bg-white/10 rounded-lg hover:bg-brand-purple transition-all min-h-tap min-w-[44px] flex items-center justify-center"
                 aria-label="Email"
                 whileHover={shouldReduceMotion ? {} : { scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -146,13 +146,13 @@ export function FooterFinal() {
           </motion.div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-white/10 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
           <p className="text-body-sm text-gray-400 text-center md:text-left">
             &copy; {currentYear} 6ixminds Labs. All rights reserved.
           </p>
         </div>
 
-        <div className="mt-8 flex justify-center">
+        <div className="mt-6 sm:mt-8 flex justify-center">
           <motion.div
             className="relative w-16 h-16"
             animate={

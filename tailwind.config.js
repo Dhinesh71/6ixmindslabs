@@ -80,6 +80,26 @@ export default {
   		},
   		spacing: {
   			'container': 'clamp(1rem, 3vw, 2rem)',
+  		},
+  		screens: {
+  			'xs': '320px',
+  			'sm': '640px',
+  			'md': '768px',
+  			'lg': '1024px',
+  			'xl': '1280px',
+  			'2xl': '1536px',
+  		},
+  		padding: {
+  			'safe-xs': 'clamp(0.75rem, 2vw, 1rem)',
+  			'safe-sm': 'clamp(1rem, 2.5vw, 1.5rem)',
+  			'safe-md': 'clamp(1.5rem, 3vw, 2rem)',
+  			'safe-lg': 'clamp(2rem, 4vw, 3rem)',
+  		},
+  		gap: {
+  			'safe-xs': 'clamp(0.75rem, 2vw, 1rem)',
+  			'safe-sm': 'clamp(1rem, 2.5vw, 1.5rem)',
+  			'safe-md': 'clamp(1.5rem, 3vw, 2rem)',
+  			'safe-lg': 'clamp(2rem, 4vw, 3rem)',
   		}
   	}
   },

@@ -43,16 +43,24 @@
 
 .phone-right {
   right: clamp(2%, 10%, 80px);
-  transform: rotateY(-20deg) rotateX(6deg) rotateZ(8deg);
+  transform: rotateY(-20deg) rotateX(6deg) rotateZ(8deg) scaleY(0.85);
   z-index: 10;
 }
 
 .phone-image {
-  width: clamp(140px, 20vw, 260px);
+  width: clamp(150px, 21vw, 280px);
   height: auto;
   display: block;
   object-fit: contain;
   border-radius: 12px;
+}
+
+.phone-left .phone-image {
+  width: clamp(155px, 22vw, 290px);
+}
+
+.phone-right .phone-image {
+  width: clamp(145px, 20vw, 270px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -76,10 +84,19 @@
 
   .phone-right {
     right: clamp(1%, 5%, 40px);
+    transform: rotateY(-20deg) rotateX(6deg) rotateZ(8deg) scaleY(0.85);
   }
 
   .phone-image {
-    width: clamp(130px, 18vw, 220px);
+    width: clamp(140px, 19vw, 240px);
+  }
+
+  .phone-left .phone-image {
+    width: clamp(145px, 20vw, 250px);
+  }
+
+  .phone-right .phone-image {
+    width: clamp(135px, 18vw, 230px);
   }
 
   .hero-phones-container {
@@ -99,10 +116,19 @@
 
   .phone-right {
     right: clamp(0%, 3%, 20px);
+    transform: rotateY(-20deg) rotateX(6deg) rotateZ(8deg) scaleY(0.85);
   }
 
   .phone-image {
-    width: clamp(110px, 22vw, 180px);
+    width: clamp(120px, 23vw, 200px);
+  }
+
+  .phone-left .phone-image {
+    width: clamp(125px, 24vw, 210px);
+  }
+
+  .phone-right .phone-image {
+    width: clamp(115px, 22vw, 190px);
   }
 
   .phone-mockup {
@@ -128,11 +154,19 @@
 
   .phone-right {
     right: clamp(-5%, 2%, 0px);
-    transform: rotateY(-20deg) rotateX(6deg) rotateZ(8deg) translateY(10px);
+    transform: rotateY(-20deg) rotateX(6deg) rotateZ(8deg) translateY(10px) scaleY(0.85);
   }
 
   .phone-image {
-    width: clamp(100px, 26vw, 160px);
+    width: clamp(110px, 27vw, 175px);
+  }
+
+  .phone-left .phone-image {
+    width: clamp(115px, 28vw, 185px);
+  }
+
+  .phone-right .phone-image {
+    width: clamp(105px, 26vw, 165px);
   }
 
   .phone-mockup {
@@ -158,11 +192,19 @@
 
   .phone-right {
     right: -15px;
-    transform: rotateY(-22deg) rotateX(8deg) rotateZ(10deg) translateY(5px);
+    transform: rotateY(-22deg) rotateX(8deg) rotateZ(10deg) translateY(5px) scaleY(0.85);
   }
 
   .phone-image {
-    width: clamp(85px, 28vw, 135px);
+    width: clamp(95px, 29vw, 150px);
+  }
+
+  .phone-left .phone-image {
+    width: clamp(100px, 30vw, 160px);
+  }
+
+  .phone-right .phone-image {
+    width: clamp(90px, 28vw, 140px);
   }
 
   .phone-mockup {
@@ -181,8 +223,20 @@
     max-width: 1100px;
   }
 
+  .phone-right {
+    transform: rotateY(-20deg) rotateX(6deg) rotateZ(8deg) scaleY(0.85);
+  }
+
   .phone-image {
-    width: clamp(220px, 22vw, 300px);
+    width: clamp(240px, 23vw, 320px);
+  }
+
+  .phone-left .phone-image {
+    width: clamp(250px, 24vw, 330px);
+  }
+
+  .phone-right .phone-image {
+    width: clamp(230px, 22vw, 310px);
   }
 
   .phone-mockup {

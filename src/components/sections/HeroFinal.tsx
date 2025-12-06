@@ -29,16 +29,16 @@ export function HeroFinal() {
   };
 
   return (
-    <section className="relative bg-white pt-4 sm:pt-6 md:pt-8 lg:pt-10 pb-8 sm:pb-12 md:pb-16 lg:pb-20 overflow-hidden min-h-screen sm:min-h-[90vh] lg:min-h-[85vh] flex items-center justify-center mt-2 sm:mt-4 md:mt-6 lg:mt-8">
+    <section className="relative bg-white pt-6 sm:pt-8 md:pt-12 lg:pt-16 pb-8 sm:pb-12 md:pb-16 lg:pb-20 overflow-hidden min-h-screen sm:min-h-[90vh] lg:min-h-[85vh] flex items-center justify-center">
       <div className="absolute inset-0 pointer-events-none opacity-40">
-        <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-60 sm:w-96 h-60 sm:h-96 bg-purple-300/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-5 sm:bottom-10 right-5 sm:right-20 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-pink-300/15 rounded-full blur-3xl" />
+        <div className="absolute top-8 sm:top-16 md:top-20 left-4 sm:left-10 w-48 sm:w-80 md:w-96 h-48 sm:h-80 md:h-96 bg-purple-300/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-4 sm:bottom-10 right-4 sm:right-16 md:right-20 w-56 sm:w-96 md:w-[500px] h-56 sm:h-96 md:h-[500px] bg-pink-300/15 rounded-full blur-3xl" />
       </div>
 
       <Container className="relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center w-full">
           <motion.div
-            className="flex flex-col items-start justify-center text-left gap-6 md:gap-8"
+            className="flex flex-col items-start justify-center text-left gap-4 sm:gap-6 md:gap-8"
             initial={shouldReduceMotion ? false : 'hidden'}
             animate="visible"
           >
@@ -71,14 +71,14 @@ export function HeroFinal() {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto"
               custom={0.3}
               variants={fadeUpVariants}
             >
               <CTAButton
                 onClick={scrollToContact}
                 variant="primary"
-                className="flex items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm md:text-base uppercase tracking-wide shadow-xl shadow-purple-500/20 min-h-tap px-4 sm:px-6 md:px-8 py-3 sm:py-4"
+                className="flex items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm md:text-base uppercase tracking-wide shadow-xl shadow-purple-500/20 min-h-tap px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-3.5"
               >
                 <span>Book a 15-min call</span>
                 <ArrowRight size={16} className="sm:w-5 sm:h-5" />
@@ -86,7 +86,7 @@ export function HeroFinal() {
               <CTAButton
                 onClick={scrollToPortfolio}
                 variant="secondary"
-                className="flex items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm md:text-base uppercase tracking-wide min-h-tap px-4 sm:px-6 md:px-8 py-3 sm:py-4"
+                className="flex items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm md:text-base uppercase tracking-wide min-h-tap px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-3.5"
               >
                 <span>View products</span>
               </CTAButton>

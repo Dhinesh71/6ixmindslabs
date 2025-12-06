@@ -45,20 +45,20 @@ export function ContactFinal() {
   return (
     <Section id="contact" background="gradient" containerSize="default">
       <div className="relative">
-        <div className="grid lg:grid-cols-2 gap-10 md:gap-12 items-start relative z-10">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start relative z-10">
           <motion.div
             initial={shouldReduceMotion ? false : { opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-50 to-pink-50 px-5 py-2.5 rounded-full mb-6 border border-purple-100">
-              <span className="text-sm font-semibold text-brand-purple uppercase tracking-wide">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-50 to-pink-50 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full mb-4 sm:mb-6 border border-purple-100">
+              <span className="text-xs sm:text-sm font-semibold text-brand-purple uppercase tracking-wide">
                 Let's Talk
               </span>
             </div>
 
-            <h2 className="text-heading-2 font-extrabold text-text-primary mb-6">
+            <h2 className="text-heading-2 font-extrabold text-text-primary mb-4 sm:mb-6">
               Start with a{' '}
               <span
                 className="bg-gradient-to-r from-brand-purple to-brand-pink bg-clip-text text-transparent inline-block"
@@ -72,13 +72,13 @@ export function ContactFinal() {
               scoping call
             </h2>
 
-            <p className="text-body-lg text-gray-600 mb-8 leading-relaxed">
+            <p className="text-body-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
               No sales pitch. Just a 15-minute technical conversation about your
               goals, timeline, and budget. We'll tell you honestly if we're the
               right fit.
             </p>
 
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-5 md:space-y-6">
               {[
                 {
                   icon: User,
@@ -108,17 +108,17 @@ export function ContactFinal() {
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
-                  className="flex items-start gap-4"
+                  className="flex items-start gap-3 sm:gap-4"
                   initial={shouldReduceMotion ? false : { opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1, duration: 0.4 }}
                 >
-                  <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl flex items-center justify-center border border-purple-200">
-                    <item.icon size={24} className="text-brand-purple" />
+                  <div className="flex-shrink-0 w-10 sm:w-12 md:w-14 h-10 sm:h-12 md:h-14 bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl flex items-center justify-center border border-purple-200">
+                    <item.icon size={20} className="sm:w-6 sm:h-6 text-brand-purple" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-body-lg font-bold text-text-primary mb-1">
+                    <h3 className="text-body-lg font-bold text-text-primary mb-0.5 sm:mb-1">
                       {item.title}
                     </h3>
                     <p className="text-body-sm text-gray-600 break-words">
@@ -131,7 +131,7 @@ export function ContactFinal() {
           </motion.div>
 
           <motion.div
-            className="bg-white rounded-2xl p-6 md:p-8 shadow-2xl border-2 border-gray-100"
+            className="bg-white rounded-2xl p-5 sm:p-6 md:p-8 shadow-2xl border-2 border-gray-100"
             initial={shouldReduceMotion ? false : { opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
@@ -155,11 +155,11 @@ export function ContactFinal() {
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 md:space-y-6">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-body-sm font-semibold text-text-primary mb-2"
+                    className="block text-body-sm font-semibold text-text-primary mb-1.5 sm:mb-2"
                   >
                     Name *
                   </label>
@@ -172,7 +172,7 @@ export function ContactFinal() {
                     onFocus={() => setFocusedField('name')}
                     onBlur={() => setFocusedField(null)}
                     required
-                    className="w-full px-4 py-3 md:py-4 bg-white border-2 border-gray-200 rounded-lg focus:border-brand-purple focus:outline-none transition-all text-body-md min-h-tap"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 md:py-4 bg-white border-2 border-gray-200 rounded-lg focus:border-brand-purple focus:outline-none transition-all text-body-md min-h-tap"
                     placeholder="John Doe"
                     animate={
                       shouldReduceMotion || focusedField !== 'name'
@@ -189,7 +189,7 @@ export function ContactFinal() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-body-sm font-semibold text-text-primary mb-2"
+                    className="block text-body-sm font-semibold text-text-primary mb-1.5 sm:mb-2"
                   >
                     Email *
                   </label>
@@ -202,7 +202,7 @@ export function ContactFinal() {
                     onFocus={() => setFocusedField('email')}
                     onBlur={() => setFocusedField(null)}
                     required
-                    className="w-full px-4 py-3 md:py-4 bg-white border-2 border-gray-200 rounded-lg focus:border-brand-purple focus:outline-none transition-all text-body-md min-h-tap"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 md:py-4 bg-white border-2 border-gray-200 rounded-lg focus:border-brand-purple focus:outline-none transition-all text-body-md min-h-tap"
                     placeholder="john@company.com"
                     animate={
                       shouldReduceMotion || focusedField !== 'email'
@@ -219,7 +219,7 @@ export function ContactFinal() {
                 <div>
                   <label
                     htmlFor="company"
-                    className="block text-body-sm font-semibold text-text-primary mb-2"
+                    className="block text-body-sm font-semibold text-text-primary mb-1.5 sm:mb-2"
                   >
                     Company
                   </label>
@@ -231,7 +231,7 @@ export function ContactFinal() {
                     onChange={handleChange}
                     onFocus={() => setFocusedField('company')}
                     onBlur={() => setFocusedField(null)}
-                    className="w-full px-4 py-3 md:py-4 bg-white border-2 border-gray-200 rounded-lg focus:border-brand-purple focus:outline-none transition-all text-body-md min-h-tap"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 md:py-4 bg-white border-2 border-gray-200 rounded-lg focus:border-brand-purple focus:outline-none transition-all text-body-md min-h-tap"
                     placeholder="Acme Inc."
                     animate={
                       shouldReduceMotion || focusedField !== 'company'

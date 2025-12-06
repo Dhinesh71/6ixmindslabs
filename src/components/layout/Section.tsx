@@ -27,10 +27,11 @@ export function Section({
     gradient: 'bg-gradient-to-br from-purple-50/30 via-white to-pink-50/30',
   };
 
+  // Mobile-first spacing: base mobile padding, scale up for larger screens
   const content = (
     <section
       id={id}
-      className={`relative py-4 md:py-8 lg:py-10 overflow-hidden ${backgrounds[background]} ${className}`}
+      className={`relative py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden ${backgrounds[background]} ${className}`}
     >
       <Container size={containerSize}>{children}</Container>
     </section>
