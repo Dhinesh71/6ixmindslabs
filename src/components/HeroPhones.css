@@ -36,14 +36,16 @@
 }
 
 .phone-left {
-  left: clamp(2%, 10%, 80px);
-  transform: rotateY(20deg) rotateX(6deg) rotateZ(-8deg);
+  left: 50%;
+  top: 50%;
+  transform: translate(-70%, -50%) rotateY(12deg) rotateX(3deg) rotateZ(-10deg);
   z-index: 20;
 }
 
 .phone-right {
-  right: clamp(2%, 10%, 80px);
-  transform: rotateY(-20deg) rotateX(6deg) rotateZ(8deg) scaleY(0.85);
+  left: 50%;
+  top: 50%;
+  transform: translate(-30%, -50%) rotateY(-12deg) rotateX(3deg) rotateZ(10deg) scale(0.9);
   z-index: 10;
 }
 
@@ -79,12 +81,15 @@
   }
 
   .phone-left {
-    left: clamp(1%, 5%, 40px);
+    left: 50%;
+    top: 50%;
+    transform: translate(-75%, -50%) rotateY(12deg) rotateX(3deg) rotateZ(-10deg) scale(0.95);
   }
 
   .phone-right {
-    right: clamp(1%, 5%, 40px);
-    transform: rotateY(-20deg) rotateX(6deg) rotateZ(8deg) scaleY(0.85);
+    left: 50%;
+    top: 50%;
+    transform: translate(-25%, -50%) rotateY(-12deg) rotateX(3deg) rotateZ(10deg) scale(0.85);
   }
 
   .phone-image {
@@ -111,12 +116,15 @@
   }
 
   .phone-left {
-    left: clamp(0%, 3%, 20px);
+    left: 50%;
+    top: 50%;
+    transform: translate(-80%, -50%) rotateY(10deg) rotateX(2deg) rotateZ(-8deg) scale(0.9);
   }
 
   .phone-right {
-    right: clamp(0%, 3%, 20px);
-    transform: rotateY(-20deg) rotateX(6deg) rotateZ(8deg) scaleY(0.85);
+    left: 50%;
+    top: 50%;
+    transform: translate(-20%, -50%) rotateY(-10deg) rotateX(2deg) rotateZ(8deg) scale(0.8);
   }
 
   .phone-image {
@@ -148,13 +156,15 @@
   }
 
   .phone-left {
-    left: clamp(-5%, 2%, 0px);
-    transform: rotateY(20deg) rotateX(6deg) rotateZ(-8deg) translateY(-10px);
+    left: 50%;
+    top: 50%;
+    transform: translate(-85%, -50%) rotateY(8deg) rotateX(2deg) rotateZ(-6deg) scale(0.85);
   }
 
   .phone-right {
-    right: clamp(-5%, 2%, 0px);
-    transform: rotateY(-20deg) rotateX(6deg) rotateZ(8deg) translateY(10px) scaleY(0.85);
+    left: 50%;
+    top: 50%;
+    transform: translate(-15%, -50%) rotateY(-8deg) rotateX(2deg) rotateZ(6deg) scale(0.75);
   }
 
   .phone-image {
@@ -186,13 +196,15 @@
   }
 
   .phone-left {
-    left: -15px;
-    transform: rotateY(22deg) rotateX(8deg) rotateZ(-10deg) translateY(-5px);
+    left: 50%;
+    top: 50%;
+    transform: translate(-90%, -50%) rotateY(6deg) rotateX(1deg) rotateZ(-5deg) scale(0.8);
   }
 
   .phone-right {
-    right: -15px;
-    transform: rotateY(-22deg) rotateX(8deg) rotateZ(10deg) translateY(5px) scaleY(0.85);
+    left: 50%;
+    top: 50%;
+    transform: translate(-10%, -50%) rotateY(-6deg) rotateX(1deg) rotateZ(5deg) scale(0.7);
   }
 
   .phone-image {
@@ -223,8 +235,16 @@
     max-width: 1100px;
   }
 
+  .phone-left {
+    left: 50%;
+    top: 50%;
+    transform: translate(-65%, -50%) rotateY(14deg) rotateX(4deg) rotateZ(-12deg) scale(1.05);
+  }
+
   .phone-right {
-    transform: rotateY(-20deg) rotateX(6deg) rotateZ(8deg) scaleY(0.85);
+    left: 50%;
+    top: 50%;
+    transform: translate(-35%, -50%) rotateY(-14deg) rotateX(4deg) rotateZ(12deg) scale(0.95);
   }
 
   .phone-image {
