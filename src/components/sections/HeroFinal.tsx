@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { CTAButton } from '../motion/CTAButton';
 import { Container } from '../layout/Container';
+import HeroPhones from '../HeroPhones';
 
 export function HeroFinal() {
   const shouldReduceMotion = useReducedMotion();
@@ -92,7 +93,14 @@ export function HeroFinal() {
             </motion.div>
           </motion.div>
 
-          {/* Phone mockups removed from hero section to disable mobile animation */}
+          <motion.div
+            className="flex items-center justify-center w-full h-full"
+            initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <HeroPhones />
+          </motion.div>
         </div>
       </Container>
     </section>
